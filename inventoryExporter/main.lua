@@ -56,6 +56,43 @@ local weaponClassNames = {
     [11] = "Marksman"
 }
 
+-- Dictionary used to convert an clothing slot to its matching string value
+local clothingSlotNames = {
+    [0] = "Pants",
+    [1] = "Shoes",
+    [2] = "Shirt",
+    [3] = "Belt",
+    [4] = "Robe",
+    [5] = "Right Glove",
+    [6] = "Left Glove",
+    [7] = "Skirt",
+    [8] = "Ring",
+    [9] = "Amulet"
+}
+
+-- Dictionary used to convert an armor slot to its matching string value
+local armorSlotNames = {
+    [0] = "Helmet",
+    [1] = "Cuirass",
+    [2] = "Left Pauldron",
+    [3] = "Right Pauldron",
+    [4] = "Greaves",
+    [5] = "Boots",
+    [6] = "Left Gauntlet",
+    [7] = "Right Gauntlet",
+    [8] = "Shield",
+    [9] = "Left Bracer",
+    [10] = "Right Bracer"
+}
+
+-- Dictionary used to convert an armor weight class to its matching string value
+local armorClassNames = {
+    [0] = "Light",
+    [1] = "Medium",
+    [2] = "Heavy"
+}
+
+
 -- Function which returns the string value of the input ObjectType
 local function getObjectTypeName(objectType)
 	return objectTypeNames[objectType] or "Unknown"
@@ -70,6 +107,22 @@ end
 local function getWeaponClassName(weaponType)
 	return weaponClassNames[weaponType] or "Unknown"
 end
+
+-- Function which returns the string value of the input clothingType
+local function getClothingSlotName(clothingType)
+	return clothingSlotNames[clothingType] or "Unknown"
+end
+
+-- Function which returns the string value of the input armorSlot
+local function getArmorSlotName(armorSlot)
+	return armorSlotNames[armorSlot] or "Unknown"
+end
+
+-- Function which returns the string value of the input armorClass
+local function getArmorClassName(armorClass)
+	return armorClassNames[armorClass] or "Unknown"
+end
+
 
 local function exportInventory()
     -- Opening message of script
@@ -104,7 +157,7 @@ local function exportInventory()
 
         local weight = item.weight or 0 -- Get weight of individual item
 
-        local isEquipped = myObject:hasItemEquipped(item.name)
+        local isEquipped = tes3.player.object:hasItemEquipped(item.id)
 
         -- Write this general information about item to .txt file
         file:write(string.format("Name: %s; Type: %s; Cost: %d; Weight: %f; Quantity: %d\n", item.name, item_type, cost, weight, count))
@@ -115,14 +168,26 @@ local function exportInventory()
 
             local weapon_class = getWeaponClassName(item.type) -- Get class of weapon and ammunition
 
-            file:write(string.format("Weapon Type: %s; Weapon Class: %s; Equipped?: %s\n", weapon_type, weapon_class, isEquipped ? "true" : "false"))       
+            file:write(string.format("Weapon Type: %s; Weapon Class: %s; Equipped: %s\n", weapon_type, weapon_class, isEquipped))       
 
         elseif(item_type == "Ammunition") then -- Collect info about ammo type
 
             local weapon_type = getWeaponTypeName(item.type) -- Get type of weapon and ammunition
 
-            file:write(string.format("Weapon Type: %s; Equipped?: %s\n", weapon_type, isEquipped ? "true" : "false"))      
+            file:write(string.format("Weapon Type: %s; Equipped: %s\n", weapon_type, isEquipped))      
 
+        elseif(item_type == "Clothing") then -- Collect info about clothing type
+
+            local clothing_slot = getClothingSlotName(item.slot) -- Get slot used by the clothing item
+
+            file:write(string.format("Clothing Slot: %s; Equipped: %s\n", clothing_slot, isEquipped))
+        elseif(item_type == "Armor") then -- Collect info about armor type
+
+            local armor_slot = getArmorSlotName(item.slot) -- Get slot used by armor item
+
+            local armor_class = getArmorClassName(item.weightClass) -- Get weight class of armor item
+
+            file:write(string.format("Armor Slot: %s; Armor Class: %s; Equipped: %s\n", armor_slot, armor_class, isEquipped))          
         end
 
     end
