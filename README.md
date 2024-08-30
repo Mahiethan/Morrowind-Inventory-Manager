@@ -2,16 +2,37 @@
 
 # ***Work in Progress***
 
-# Prerequisites
+## Prerequisites
 
-- A game copy of *"The Elder Scrolls III : Morrowind"*
+- A game copy of *"The Elder Scrolls III: Morrowind"*
+
+- *g++ compiler* (C++ compiler)
+    - Installation guide: https://code.visualstudio.com/docs/cpp/config-mingw
 
 - *MWSE (Morrowind Script Extender)*
     - Installation: https://www.nexusmods.com/morrowind/mods/45468 (Nexus Mods) 
 
     - Follow the mod requirements listed on this mod webpage to ensure compatability.
 
-# Where to place the Lua script inside the `inventoryExplorer` folder?
+## How to compile?
+
+If you have g++ installed, you can compile the program using the following command from the `./Morrowind-Inventory-Manager` directory:
+
+UPDATE FOLLOWING COMMAND TO INCLUDE NEW CLASSES
+
+```
+g++ -g ./classes/item.cpp main.cpp -o inventoryManager
+```
+
+This will produce an executable `inventoryManager.exe` which you can run by clicking on it, or using a terminal window like `cmd` or similar.
+
+If your system supports shell, you can instead run the `compile.sh` script like shown below:
+
+```
+sh compile.sh
+```
+
+## Where to place the Lua script inside the `inventoryExplorer` folder?
 
 Copy the entire folder `inventoryExplorer` into the following directory:
 
