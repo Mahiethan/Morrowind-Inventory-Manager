@@ -85,25 +85,88 @@ void parseInventory()
     }
 }
 
+void searchInventory(std::unordered_map<std::string,Armor>* selection)
+{
+    if(selection == &armorInventory)
+    {
+        auto searchedItem = armorInventory.find("Adamantium Left Pauldron");
+
+        if(searchedItem != armorInventory.end())
+        {
+            std::cout<<"Name: "<<searchedItem->second.getName()<<std::endl;
+
+            std::cout<<"Armor slot: "<<searchedItem->second.getArmorSlot()<<std::endl;
+            std::cout<<"Armor class: "<<searchedItem->second.getArmorClass()<<std::endl;
+            std::cout<<"Is armor equipped: "<<(searchedItem->second.getEquippedStatus() ? "true" : "false")<<std::endl;
+
+            // Calculate total cost and total weight
+            std::cout<<"Total value: "<<searchedItem->second.calculateTotalValue()<<" septims"<<std::endl;
+            std::cout<<"Total weight: "<<searchedItem->second.calculateTotalWeight()<<std::endl;
+        }
+    }
+}
+
+void searchInventoryMenu()
+{
+    bool validInput = false;
+    while(!validInput)
+    {
+        int usrOption;
+
+        std::cout<<"Select which inventory to search:\n"<<std::endl;
+        std::cout<<"(1) Armor inventory\n";
+        std::cout<<"(2) Return to main menu\n";
+
+        std::cin >> usrOption;
+
+        std::cout<<"\n";
+
+        switch(usrOption)
+        {
+            case 1: searchInventory(&armorInventory); break;
+            case 2: validInput = true; break;
+            default: std::cout<<"Invalid input. Please try again (Select an integer between 1-2).\n\n";
+        }
+    }
+}
+
+void mainMenu()
+{
+    std::cout<<"Welcome to the Morrowind Inventory Manager\n\n"<<std::endl;
+
+    bool validInput = false;
+
+    while(!validInput)
+    {
+        int usrOption;
+
+        std::cout<<"Select one of the following features: (Enter an integer)\n"<<std::endl;
+        std::cout<<"(1) View inventory\n";
+        std::cout<<"(2) Search inside inventory\n";
+        std::cout<<"(3) Refresh inventory\n";
+        std::cout<<"(4) Exit program\n";
+
+        std::cin >> usrOption;
+
+        std::cout<<"\n";
+
+        switch(usrOption)
+        {
+            case 1: std::cout<<"NOT YET IMPLEMENTED \n"; break;
+            case 2: searchInventoryMenu(); break;
+            case 3: parseInventory(); std::cout<<"Inventory refreshed. Return back to main menu.\n\n"; break;
+            case 4: std::cout<<"Exiting program ... \n"; validInput = true; break;
+            default: std::cout<<"Invalid input. Please try again (Select an integer between 1-3).\n\n";
+        }
+    }
+}
+
 int main()
 {
-    // Parse through text file and obtain each inventory item
+    /* Parse through text file and obtain each inventory item before proceeding to main menu for user input */
     parseInventory();
 
-    auto searchedItem = armorInventory.find("Adamantium Left Pauldron");
-
-    if(searchedItem != armorInventory.end())
-    {
-        std::cout<<"Name: "<<searchedItem->second.getName()<<std::endl;
-
-        std::cout<<"Armor slot: "<<searchedItem->second.getArmorSlot()<<std::endl;
-        std::cout<<"Armor class: "<<searchedItem->second.getArmorClass()<<std::endl;
-        std::cout<<"Is armor equipped: "<<(searchedItem->second.getEquippedStatus() ? "true" : "false")<<std::endl;
-
-        // Calculate total cost and total weight
-        std::cout<<"Total value: "<<searchedItem->second.calculateTotalValue()<<" septims"<<std::endl;
-        std::cout<<"Total weight: "<<searchedItem->second.calculateTotalWeight()<<std::endl;
-    }
+    mainMenu();
 
     return 0;
 }
