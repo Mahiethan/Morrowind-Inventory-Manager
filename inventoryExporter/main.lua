@@ -187,7 +187,27 @@ local function exportInventory()
 
             local armor_class = getArmorClassName(item.weightClass) -- Get weight class of armor item
 
-            file:write(string.format("Armor Slot: %s; Armor Class: %s; Equipped: %s\n", armor_slot, armor_class, isEquipped))          
+            file:write(string.format("Armor Slot: %s; Armor Class: %s; Equipped: %s\n", armor_slot, armor_class, isEquipped))
+        elseif(item_type == "Lockpick") then -- Collect info about lockpick type
+
+            local lockpick_condition = item.condition; -- Get condition of lockpick item
+
+            file:write(string.format("Condition: %s; Equipped: %s\n", lockpick_condition, isEquipped))
+        elseif(item_type == "Repair Tool") then -- Collect info about repair tool type
+
+            local repair_tool_condition = item.condition; -- Get condition of repair tool item
+
+            file:write(string.format("Condition: %s; Equipped: %s\n", repair_tool_condition, isEquipped))
+        elseif(item_type == "Probe") then -- Collect info about probe type
+
+            local probe_condition = item.condition; -- Get condition of probe item
+
+            file:write(string.format("Condition: %s; Equipped: %s\n", probe_condition, isEquipped))
+        elseif(item_type == "Light") then -- Collect info about light type
+
+            local light_time_left = item.timeLeft; -- Get time remaining for light item
+
+            file:write(string.format("Time Left: %s; Equipped: %s\n", light_time_left, isEquipped))                   
         end
 
     end

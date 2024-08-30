@@ -3,4 +3,417 @@ Character name: Idros Neladren
 ======================================
 
 Name: Adamantium Left Pauldron; Type: Armor; Cost: 800; Weight: 7.000000; Quantity: 1
+Armor Slot: Left Pauldron; Armor Class: Medium; Equipped: true
+Name: Adamantium Right Pauldron; Type: Armor; Cost: 800; Weight: 7.000000; Quantity: 1
+Armor Slot: Right Pauldron; Armor Class: Medium; Equipped: true
+Name: Addamasartus Slave Key; Type: Miscellaneous; Cost: 300; Weight: 0.000000; Quantity: 1
+Name: Akatosh's Ring; Type: Clothing; Cost: 2400; Weight: 0.100000; Quantity: 1
+Clothing Slot: Ring; Equipped: false
+Name: Alchemist's Ring; Type: Clothing; Cost: 3; Weight: 0.100000; Quantity: 1
+Clothing Slot: Ring; Equipped: false
+Name: Amulet of Almsivi Intervention; Type: Clothing; Cost: 21; Weight: 1.000000; Quantity: 1
+Clothing Slot: Amulet; Equipped: false
+Name: Amulet of Divine Intervention; Type: Clothing; Cost: 21; Weight: 1.000000; Quantity: 1
+Clothing Slot: Amulet; Equipped: false
+Name: Amulet of Locking; Type: Clothing; Cost: 4; Weight: 1.000000; Quantity: 1
+Clothing Slot: Amulet; Equipped: false
+Name: Amulet of Shades; Type: Clothing; Cost: 225; Weight: 1.000000; Quantity: 1
+Clothing Slot: Amulet; Equipped: false
+Name: Amulet of Shadows; Type: Clothing; Cost: 750; Weight: 1.000000; Quantity: 1
+Clothing Slot: Amulet; Equipped: false
+Name: Amulet of Slowfalling; Type: Clothing; Cost: 413; Weight: 1.000000; Quantity: 1
+Clothing Slot: Amulet; Equipped: false
+Name: Amulet of Spell Absorption; Type: Clothing; Cost: 213; Weight: 1.000000; Quantity: 1
+Clothing Slot: Amulet; Equipped: false
+Name: Ancestor's Ring; Type: Clothing; Cost: 203; Weight: 0.100000; Quantity: 1
+Clothing Slot: Ring; Equipped: false
+Name: Ancient Dwemer Door Key; Type: Miscellaneous; Cost: 300; Weight: 0.000000; Quantity: 2
+Name: Ancient, Rusted Daedric Key; Type: Miscellaneous; Cost: 300; Weight: 0.000000; Quantity: 1
+Name: Apprentice's Lockpick; Type: Lockpick; Cost: 10; Weight: 0.250000; Quantity: 4
+Condition: 25; Equipped: false
+Name: Apprentice's Probe; Type: Probe; Cost: 10; Weight: 0.250000; Quantity: 1
+Condition: 25; Equipped: false
+Name: Archcanon's Private Key; Type: Miscellaneous; Cost: 300; Weight: 0.000000; Quantity: 1
+Name: Azura's Star; Type: Miscellaneous; Cost: 5000; Weight: 2.000000; Quantity: 1
+Name: Balm Amulet; Type: Clothing; Cost: 8; Weight: 1.000000; Quantity: 1
+Clothing Slot: Amulet; Equipped: false
+Name: Bargain Potion of Fire Shield; Type: Alchemy; Cost: 5; Weight: 1.500000; Quantity: 1
+Name: Belt of Charisma; Type: Clothing; Cost: 6; Weight: 1.000000; Quantity: 1
+Clothing Slot: Belt; Equipped: false
+Name: Belt of Feet of Notorgo; Type: Clothing; Cost: 6; Weight: 1.000000; Quantity: 1
+Clothing Slot: Belt; Equipped: false
+Name: Belt of Jack of Trades; Type: Clothing; Cost: 6; Weight: 1.000000; Quantity: 1
+Clothing Slot: Belt; Equipped: false
+Name: Belt of Nimbleness; Type: Clothing; Cost: 6; Weight: 1.000000; Quantity: 1
+Clothing Slot: Belt; Equipped: false
+Name: Belt of the Armor of God; Type: Clothing; Cost: 33; Weight: 1.000000; Quantity: 1
+Clothing Slot: Belt; Equipped: false
+Name: Belt of the Hortator; Type: Clothing; Cost: 1460; Weight: 1.000000; Quantity: 1
+Clothing Slot: Belt; Equipped: true
+Name: Blind Ring; Type: Clothing; Cost: 6; Weight: 0.100000; Quantity: 1
+Clothing Slot: Ring; Equipped: false
+Name: Blood Belt; Type: Clothing; Cost: 16; Weight: 1.000000; Quantity: 1
+Clothing Slot: Belt; Equipped: false
+Name: Bone Charm; Type: Clothing; Cost: 255; Weight: 1.000000; Quantity: 1
+Clothing Slot: Amulet; Equipped: false
+Name: Bonebiter Charm; Type: Clothing; Cost: 13; Weight: 1.000000; Quantity: 1
+Clothing Slot: Amulet; Equipped: false
+Name: Boots of the Apostle; Type: Armor; Cost: 55000; Weight: 10.000000; Quantity: 1
+Armor Slot: Boots; Armor Class: Light; Equipped: false
+Name: Caius' Ring; Type: Clothing; Cost: 2; Weight: 0.100000; Quantity: 1
+Clothing Slot: Ring; Equipped: false
+Name: Caliginy Ring; Type: Clothing; Cost: 63; Weight: 0.100000; Quantity: 1
+Clothing Slot: Ring; Equipped: false
+Name: Cheap Fortify Agility; Type: Alchemy; Cost: 15; Weight: 1.000000; Quantity: 1
+Name: Cheap Fortify Endurance; Type: Alchemy; Cost: 15; Weight: 1.000000; Quantity: 2
+Name: Cheap Potion of Fortify Luck; Type: Alchemy; Cost: 15; Weight: 1.000000; Quantity: 1
+Name: Cheap Potion of Frost Shield; Type: Alchemy; Cost: 15; Weight: 1.000000; Quantity: 1
+Name: Common Soul Gem; Type: Miscellaneous; Cost: 40; Weight: 1.000000; Quantity: 1
+Name: Crimson Despair Amulet; Type: Clothing; Cost: 50; Weight: 1.000000; Quantity: 1
+Clothing Slot: Amulet; Equipped: false
+Name: Crude Bronze Key; Type: Miscellaneous; Cost: 300; Weight: 0.000000; Quantity: 2
+Name: Cruel Shardbolt Ring; Type: Clothing; Cost: 8; Weight: 0.100000; Quantity: 1
+Clothing Slot: Ring; Equipped: false
+Name: Custom Restore Health; Type: Alchemy; Cost: 148; Weight: 0.294118; Quantity: 3
+Name: Cyrodiilic Brandy; Type: Alchemy; Cost: 100; Weight: 1.000000; Quantity: 4
+Name: Daedra Heart; Type: Ingredient; Cost: 200; Weight: 1.000000; Quantity: 3
+Name: Dagoth Fals' Key; Type: Miscellaneous; Cost: 300; Weight: 0.000000; Quantity: 1
+Name: Dagoth Galmis' Key; Type: Miscellaneous; Cost: 300; Weight: 0.000000; Quantity: 1
+Name: Dagoth Odros' Key; Type: Miscellaneous; Cost: 300; Weight: 0.000000; Quantity: 1
+Name: Dagoth Tureynul's Key; Type: Miscellaneous; Cost: 300; Weight: 0.000000; Quantity: 1
+Name: Dagoth Ur's Plans; Type: Book; Cost: 0; Weight: 0.100000; Quantity: 1
+Name: Decoded Package; Type: Book; Cost: 0; Weight: 0.200000; Quantity: 1
+Name: Dire Viperbolt Ring; Type: Clothing; Cost: 8; Weight: 0.100000; Quantity: 1
+Clothing Slot: Ring; Equipped: false
+Name: Distraction Ring; Type: Clothing; Cost: 13; Weight: 0.100000; Quantity: 1
+Clothing Slot: Ring; Equipped: false
+Name: Doze Charm; Type: Clothing; Cost: 8; Weight: 1.000000; Quantity: 1
+Clothing Slot: Amulet; Equipped: false
+Name: Dragon's Bite; Type: Armor; Cost: 1130; Weight: 4.000000; Quantity: 1
+Armor Slot: Helmet; Armor Class: Medium; Equipped: true
+Name: Dreugh Cuirass; Type: Armor; Cost: 5250; Weight: 27.000000; Quantity: 1
+Armor Slot: Cuirass; Armor Class: Medium; Equipped: true
+Name: Dwarven Crossbow; Type: Weapon; Cost: 1200; Weight: 10.000000; Quantity: 1
+Weapon Type: Crossbow; Weapon Class: Marksman; Equipped: false
+Name: Eleidon's Ward; Type: Armor; Cost: 200000; Weight: 30.000000; Quantity: 1
+Armor Slot: Shield; Armor Class: Heavy; Equipped: true
+Name: Evil Eye Charm; Type: Clothing; Cost: 13; Weight: 1.000000; Quantity: 1
+Clothing Slot: Amulet; Equipped: false
+Name: Exclusive Fortify Attack; Type: Alchemy; Cost: 175; Weight: 0.250000; Quantity: 1
+Name: Exclusive Fortify Intelligence; Type: Alchemy; Cost: 175; Weight: 0.250000; Quantity: 1
+Name: Exclusive Fortify Luck; Type: Alchemy; Cost: 175; Weight: 0.250000; Quantity: 1
+Name: Exclusive Fortify Magicka; Type: Alchemy; Cost: 175; Weight: 0.250000; Quantity: 2
+Name: Exclusive Fortify Personality; Type: Alchemy; Cost: 175; Weight: 0.250000; Quantity: 1
+Name: Exclusive Fortify Speed; Type: Alchemy; Cost: 175; Weight: 0.250000; Quantity: 1
+Name: Exclusive Fortify Strength; Type: Alchemy; Cost: 175; Weight: 0.250000; Quantity: 2
+Name: Exclusive Fortify Willpower; Type: Alchemy; Cost: 175; Weight: 0.250000; Quantity: 2
+Name: Exclusive Frost Shield; Type: Alchemy; Cost: 175; Weight: 0.250000; Quantity: 1
+Name: Exclusive Invisibility; Type: Alchemy; Cost: 175; Weight: 0.250000; Quantity: 1
+Name: Exclusive Lightning Shield; Type: Alchemy; Cost: 175; Weight: 0.250000; Quantity: 3
+Name: Exclusive Potion of Feather; Type: Alchemy; Cost: 175; Weight: 0.250000; Quantity: 1
+Name: Exclusive Potion of Light; Type: Alchemy; Cost: 175; Weight: 0.250000; Quantity: 4
+Name: Exclusive Potion of Night-Eye; Type: Alchemy; Cost: 175; Weight: 0.250000; Quantity: 1
+Name: Exclusive Potion of Reflection; Type: Alchemy; Cost: 175; Weight: 0.250000; Quantity: 2
+Name: Exclusive Potion of Shadow; Type: Alchemy; Cost: 175; Weight: 0.250000; Quantity: 3
+Name: Exclusive Potion of Swift Swim; Type: Alchemy; Cost: 175; Weight: 0.250000; Quantity: 2
+Name: Exclusive Restore Agility; Type: Alchemy; Cost: 175; Weight: 0.250000; Quantity: 1
+Name: Exclusive Restore Endurance; Type: Alchemy; Cost: 175; Weight: 0.250000; Quantity: 1
+Name: Exclusive Restore Health; Type: Alchemy; Cost: 175; Weight: 0.250000; Quantity: 4
+Name: Exclusive Restore Intelligence; Type: Alchemy; Cost: 175; Weight: 0.250000; Quantity: 1
+Name: Exclusive Restore Luck; Type: Alchemy; Cost: 175; Weight: 0.250000; Quantity: 1
+Name: Exclusive Restore Magicka; Type: Alchemy; Cost: 175; Weight: 0.250000; Quantity: 8
+Name: Exclusive Restore Personality; Type: Alchemy; Cost: 175; Weight: 0.250000; Quantity: 1
+Name: Exclusive Restore Speed; Type: Alchemy; Cost: 175; Weight: 0.250000; Quantity: 2
+Name: Exclusive Restore Strength; Type: Alchemy; Cost: 175; Weight: 0.250000; Quantity: 2
+Name: Exclusive Restore Willpower; Type: Alchemy; Cost: 175; Weight: 0.250000; Quantity: 1
+Name: Exclusive Rising Force Potion; Type: Alchemy; Cost: 175; Weight: 0.250000; Quantity: 5
+Name: Exclusive Spell Absorption; Type: Alchemy; Cost: 175; Weight: 0.250000; Quantity: 2
+Name: Eye-Maze Ring; Type: Clothing; Cost: 69; Weight: 0.100000; Quantity: 1
+Clothing Slot: Ring; Equipped: false
+Name: Feather; Type: Alchemy; Cost: 145; Weight: 0.294118; Quantity: 1
+Name: Feather; Type: Alchemy; Cost: 185; Weight: 0.250000; Quantity: 2
+Name: Fighter Ring; Type: Clothing; Cost: 10; Weight: 0.100000; Quantity: 1
+Clothing Slot: Ring; Equipped: false
+Name: First Barrier Ring; Type: Clothing; Cost: 15; Weight: 0.100000; Quantity: 1
+Clothing Slot: Ring; Equipped: false
+Name: Flin; Type: Alchemy; Cost: 100; Weight: 1.000000; Quantity: 5
+Name: Fortify Intelligence; Type: Alchemy; Cost: 153; Weight: 0.867647; Quantity: 5
+Name: Fortify Personality; Type: Alchemy; Cost: 17; Weight: 0.333333; Quantity: 2
+Name: Fortify Strength; Type: Alchemy; Cost: 37; Weight: 0.875000; Quantity: 2
+Name: Founder's Belt; Type: Clothing; Cost: 63; Weight: 1.000000; Quantity: 1
+Clothing Slot: Belt; Equipped: false
+Name: Glowing Belt; Type: Clothing; Cost: 260; Weight: 1.000000; Quantity: 1
+Clothing Slot: Belt; Equipped: false
+Name: Gold; Type: Miscellaneous; Cost: 1; Weight: 0.000000; Quantity: 74523
+Name: Grandmaster's Armorer's Hammer; Type: Repair Tool; Cost: 100; Weight: 1.000000; Quantity: 1
+Condition: 10; Equipped: false
+Name: Grandmaster's Lockpick; Type: Lockpick; Cost: 200; Weight: 0.250000; Quantity: 1
+Condition: 25; Equipped: false
+Name: Grandmaster's Probe; Type: Probe; Cost: 200; Weight: 0.250000; Quantity: 1
+Condition: 25; Equipped: false
+Name: Guide to Vvardenfell; Type: Book; Cost: 3; Weight: 0.200000; Quantity: 1
+Name: Hanin's Revenge; Type: Weapon; Cost: 20000; Weight: 24.000000; Quantity: 1
+Weapon Type: Long Blade; Weapon Class: One Handed; Equipped: true
+Name: Hawkshaw Ring; Type: Clothing; Cost: 2; Weight: 0.100000; Quantity: 1
+Clothing Slot: Ring; Equipped: false
+Name: Hlormaren - Avon Ravel's Key; Type: Miscellaneous; Cost: 300; Weight: 0.000000; Quantity: 1
+Name: Hlormaren Slave Key; Type: Miscellaneous; Cost: 300; Weight: 0.000000; Quantity: 1
+Name: Journeyman's Lockpick; Type: Lockpick; Cost: 50; Weight: 0.250000; Quantity: 4
+Condition: 25; Equipped: false
+Name: Journeyman's Probe; Type: Probe; Cost: 50; Weight: 0.250000; Quantity: 5
+Condition: 25; Equipped: false
+Name: Juicedaw Feather Ring; Type: Clothing; Cost: 213; Weight: 0.100000; Quantity: 1
+Clothing Slot: Ring; Equipped: false
+Name: Kagrenac's Tools; Type: Book; Cost: 0; Weight: 0.200000; Quantity: 1
+Name: Keening; Type: Weapon; Cost: 400000; Weight: 9.000000; Quantity: 1
+Weapon Type: Short Blade; Weapon Class: One Handed; Equipped: false
+Name: Key to Bthanchend Chest; Type: Miscellaneous; Cost: 300; Weight: 0.000000; Quantity: 1
+Name: Key to Huleen's Hut; Type: Miscellaneous; Cost: 300; Weight: 0.000000; Quantity: 1
+Name: Key to Mzuleft; Type: Miscellaneous; Cost: 300; Weight: 0.000000; Quantity: 3
+Name: Key to Nchuleftingth; Type: Miscellaneous; Cost: 300; Weight: 0.000000; Quantity: 1
+Name: Key to Nerano Manor; Type: Miscellaneous; Cost: 300; Weight: 0.000000; Quantity: 1
+Name: Large Key; Type: Miscellaneous; Cost: 300; Weight: 0.000000; Quantity: 2
+Name: Left Fist of Randagulf; Type: Armor; Cost: 35000; Weight: 16.000000; Quantity: 1
+Armor Slot: Left Gauntlet; Armor Class: Heavy; Equipped: true
+Name: Lesser Soul Gem; Type: Miscellaneous; Cost: 20; Weight: 0.500000; Quantity: 7
+Name: Levitate; Type: Alchemy; Cost: 147; Weight: 0.294118; Quantity: 4
+Name: Life Belt; Type: Clothing; Cost: 9; Weight: 1.000000; Quantity: 1
+Clothing Slot: Belt; Equipped: false
+Name: Life Ring; Type: Clothing; Cost: 9; Weight: 0.100000; Quantity: 1
+Clothing Slot: Ring; Equipped: false
+Name: Light Amulet; Type: Clothing; Cost: 14; Weight: 1.000000; Quantity: 1
+Clothing Slot: Amulet; Equipped: false
+Name: Madstone of the Ahemmusa; Type: Clothing; Cost: 2000; Weight: 1.100000; Quantity: 1
+Clothing Slot: Amulet; Equipped: false
+Name: Mage Ring; Type: Clothing; Cost: 10; Weight: 0.100000; Quantity: 1
+Clothing Slot: Ring; Equipped: false
+Name: Map of Red Mountain; Type: Book; Cost: 0; Weight: 0.200000; Quantity: 1
+Name: Mara's Blouse; Type: Clothing; Cost: 400; Weight: 2.000000; Quantity: 1
+Clothing Slot: Shirt; Equipped: true
+Name: Maran Amulet; Type: Clothing; Cost: 300; Weight: 1.000000; Quantity: 1
+Clothing Slot: Amulet; Equipped: false
+Name: Marara's Ring; Type: Clothing; Cost: 22000; Weight: 0.100000; Quantity: 1
+Clothing Slot: Ring; Equipped: true
+Name: Master Propylon Index; Type: Miscellaneous; Cost: 2000; Weight: 3.000000; Quantity: 1
+Name: Master's Lockpick; Type: Lockpick; Cost: 100; Weight: 0.250000; Quantity: 5
+Condition: 25; Equipped: false
+Name: Master's Probe; Type: Probe; Cost: 100; Weight: 0.250000; Quantity: 2
+Condition: 25; Equipped: false
+Name: Message from Dagoth Ur; Type: Book; Cost: 0; Weight: 0.100000; Quantity: 1
+Name: Milyn Faram's Scroll; Type: Book; Cost: 211; Weight: 1.000000; Quantity: 2
+Name: Ministry of Truth Key; Type: Miscellaneous; Cost: 300; Weight: 0.000000; Quantity: 1
+Name: Mission to Vivec -- from Caius; Type: Book; Cost: 0; Weight: 0.100000; Quantity: 1
+Name: Moon-and-Star; Type: Clothing; Cost: 2000; Weight: 0.100000; Quantity: 1
+Clothing Slot: Ring; Equipped: true
+Name: Mother's Ring; Type: Clothing; Cost: 12; Weight: 0.100000; Quantity: 1
+Clothing Slot: Ring; Equipped: false
+Name: Necromancer's Amulet; Type: Clothing; Cost: 240; Weight: 1.000000; Quantity: 1
+Clothing Slot: Amulet; Equipped: true
+Name: Note from the Archcanon; Type: Book; Cost: 0; Weight: 0.100000; Quantity: 1
+Name: Note to Amaya; Type: Book; Cost: 0; Weight: 0.100000; Quantity: 1
+Name: Notes from Huleeya; Type: Book; Cost: 0; Weight: 0.200000; Quantity: 1
+Name: Odibaal Outlaw's Key; Type: Miscellaneous; Cost: 300; Weight: 0.000000; Quantity: 1
+Name: Old Man's Lucky Coin; Type: Miscellaneous; Cost: 0; Weight: 0.000000; Quantity: 1
+Name: Orcish Boots; Type: Armor; Cost: 800; Weight: 17.000000; Quantity: 1
+Armor Slot: Boots; Armor Class: Medium; Equipped: true
+Name: Orcish Greaves; Type: Armor; Cost: 1760; Weight: 13.450000; Quantity: 1
+Armor Slot: Greaves; Armor Class: Medium; Equipped: true
+Name: Orvas Dren's Key; Type: Miscellaneous; Cost: 300; Weight: 0.000000; Quantity: 1
+Name: Panat Slave Key; Type: Miscellaneous; Cost: 300; Weight: 0.000000; Quantity: 2
+Name: Pants of Recovery; Type: Clothing; Cost: 1560; Weight: 2.000000; Quantity: 1
+Clothing Slot: Pants; Equipped: true
+Name: Petty Soul Gem; Type: Miscellaneous; Cost: 10; Weight: 0.200000; Quantity: 2
+Name: Plain Key; Type: Miscellaneous; Cost: 300; Weight: 0.000000; Quantity: 1
+Name: Plan to Defeat Dagoth Ur; Type: Book; Cost: 0; Weight: 0.100000; Quantity: 1
+Name: Potion of Cure Paralyzation; Type: Alchemy; Cost: 20; Weight: 1.000000; Quantity: 2
+Name: Potion of Detect Creatures; Type: Alchemy; Cost: 35; Weight: 1.000000; Quantity: 2
+Name: Potion of Detect Enchantments; Type: Alchemy; Cost: 35; Weight: 1.000000; Quantity: 3
+Name: Potion of Sprint Burst; Type: Alchemy; Cost: 154; Weight: 0.691176; Quantity: 2
+Name: Potion of Telekinesis; Type: Alchemy; Cost: 35; Weight: 1.000000; Quantity: 1
+Name: Public notice; Type: Book; Cost: 0; Weight: 0.200000; Quantity: 1
+Name: Quality Fortify Agility; Type: Alchemy; Cost: 80; Weight: 0.500000; Quantity: 3
+Name: Quality Fortify Endurance; Type: Alchemy; Cost: 80; Weight: 0.500000; Quantity: 1
+Name: Quality Fortify Fatigue; Type: Alchemy; Cost: 80; Weight: 0.500000; Quantity: 2
+Name: Quality Fortify Magicka; Type: Alchemy; Cost: 80; Weight: 0.500000; Quantity: 2
+Name: Quality Fortify Personality; Type: Alchemy; Cost: 80; Weight: 0.500000; Quantity: 1
+Name: Quality Fortify Willpower; Type: Alchemy; Cost: 80; Weight: 0.500000; Quantity: 1
+Name: Quality Frost Resistance; Type: Alchemy; Cost: 80; Weight: 0.500000; Quantity: 2
+Name: Quality Lightning Shield; Type: Alchemy; Cost: 80; Weight: 0.500000; Quantity: 1
+Name: Quality Magicka Resistance; Type: Alchemy; Cost: 80; Weight: 0.500000; Quantity: 3
+Name: Quality Potion of Fortify Luck; Type: Alchemy; Cost: 80; Weight: 0.500000; Quantity: 1
+Name: Quality Potion of Reflection; Type: Alchemy; Cost: 80; Weight: 0.500000; Quantity: 2
+Name: Quality Potion of Swift Swim; Type: Alchemy; Cost: 80; Weight: 0.500000; Quantity: 3
+Name: Quality Restore Agility; Type: Alchemy; Cost: 80; Weight: 0.500000; Quantity: 1
+Name: Quality Restore Endurance; Type: Alchemy; Cost: 80; Weight: 0.500000; Quantity: 1
+Name: Quality Restore Fatigue; Type: Alchemy; Cost: 80; Weight: 0.500000; Quantity: 5
+Name: Quality Restore Health; Type: Alchemy; Cost: 80; Weight: 0.500000; Quantity: 4
+Name: Quality Restore Intelligence; Type: Alchemy; Cost: 80; Weight: 0.500000; Quantity: 2
+Name: Quality Restore Luck; Type: Alchemy; Cost: 80; Weight: 0.500000; Quantity: 1
+Name: Quality Restore Magicka; Type: Alchemy; Cost: 80; Weight: 0.500000; Quantity: 2
+Name: Quality Restore Personality; Type: Alchemy; Cost: 80; Weight: 0.500000; Quantity: 1
+Name: Quality Restore Speed; Type: Alchemy; Cost: 80; Weight: 0.500000; Quantity: 1
+Name: Quality Restore Willpower; Type: Alchemy; Cost: 80; Weight: 0.500000; Quantity: 1
+Name: Quality Rising Force Potion; Type: Alchemy; Cost: 80; Weight: 0.500000; Quantity: 5
+Name: Quality Shock Resistance; Type: Alchemy; Cost: 80; Weight: 0.500000; Quantity: 1
+Name: Radrene's Spell Breaker Scroll; Type: Book; Cost: 101; Weight: 0.200000; Quantity: 1
+Name: Red Despair Amulet; Type: Clothing; Cost: 14; Weight: 1.000000; Quantity: 1
+Clothing Slot: Amulet; Equipped: false
+Name: Repair Prongs; Type: Repair Tool; Cost: 6; Weight: 2.500000; Quantity: 2
+Condition: 25; Equipped: false
+Name: Ring of Aversion; Type: Clothing; Cost: 63; Weight: 0.100000; Quantity: 1
+Clothing Slot: Ring; Equipped: false
+Name: Ring of Exhaustion; Type: Clothing; Cost: 44; Weight: 0.100000; Quantity: 1
+Clothing Slot: Ring; Equipped: false
+Name: Ring of Ice Bolts; Type: Clothing; Cost: 50; Weight: 0.100000; Quantity: 1
+Clothing Slot: Ring; Equipped: false
+Name: Ring of Ironhand; Type: Clothing; Cost: 42; Weight: 0.100000; Quantity: 1
+Clothing Slot: Ring; Equipped: false
+Name: Ring of Night-Eye; Type: Clothing; Cost: 53; Weight: 0.100000; Quantity: 1
+Clothing Slot: Ring; Equipped: false
+Name: Ring of Stormhand; Type: Clothing; Cost: 54; Weight: 0.100000; Quantity: 1
+Clothing Slot: Ring; Equipped: false
+Name: Ring of Surroundings; Type: Clothing; Cost: 12000; Weight: 0.100000; Quantity: 1
+Clothing Slot: Ring; Equipped: false
+Name: Ring of Tears; Type: Clothing; Cost: 8; Weight: 0.100000; Quantity: 1
+Clothing Slot: Ring; Equipped: false
+Name: Ring of the Hortator; Type: Clothing; Cost: 658; Weight: 0.100000; Quantity: 1
+Clothing Slot: Ring; Equipped: false
+Name: Ring of Vampire's Kiss; Type: Clothing; Cost: 8; Weight: 0.100000; Quantity: 1
+Clothing Slot: Ring; Equipped: false
+Name: Ring of Wildfire; Type: Clothing; Cost: 199; Weight: 0.100000; Quantity: 1
+Clothing Slot: Ring; Equipped: false
+Name: Rotheran Slave Key; Type: Miscellaneous; Cost: 300; Weight: 0.000000; Quantity: 1
+Name: Ruby Amulet of Night-Eye; Type: Clothing; Cost: 3120; Weight: 1.000000; Quantity: 1
+Clothing Slot: Amulet; Equipped: false
+Name: Rusty Key into Indaren Tomb; Type: Miscellaneous; Cost: 300; Weight: 0.000000; Quantity: 1
+Name: Sacrifice Ring; Type: Clothing; Cost: 63; Weight: 0.100000; Quantity: 1
+Clothing Slot: Ring; Equipped: false
+Name: Saint Nerevar; Type: Book; Cost: 1; Weight: 0.100000; Quantity: 1
+Name: Savile's Slavepod Key; Type: Miscellaneous; Cost: 300; Weight: 0.000000; Quantity: 1
+Name: Scamp Slinker Belt; Type: Clothing; Cost: 270; Weight: 1.000000; Quantity: 1
+Clothing Slot: Belt; Equipped: false
+Name: Scroll of Black Death; Type: Book; Cost: 134; Weight: 0.200000; Quantity: 1
+Name: Scroll of Black Despair; Type: Book; Cost: 134; Weight: 0.200000; Quantity: 1
+Name: Scroll of Bloodfire; Type: Book; Cost: 112; Weight: 0.200000; Quantity: 1
+Name: Scroll of Breva's Averted Eyes; Type: Book; Cost: 112; Weight: 0.200000; Quantity: 1
+Name: Scroll of Daynar's Airy Bubble; Type: Book; Cost: 112; Weight: 0.200000; Quantity: 1
+Name: Scroll of Didala's Knack; Type: Book; Cost: 112; Weight: 0.200000; Quantity: 2
+Name: Scroll of Ekash's Lock Splitter; Type: Book; Cost: 343; Weight: 0.200000; Quantity: 10
+Name: Scroll of Elemental Burst:Fire; Type: Book; Cost: 161; Weight: 0.200000; Quantity: 5
+Name: Scroll of Elemental Burst:Frost; Type: Book; Cost: 161; Weight: 0.200000; Quantity: 5
+Name: Scroll of Feldram's Trepidation; Type: Book; Cost: 112; Weight: 0.200000; Quantity: 1
+Name: Scroll of Fphyggi's Gem-Feeder; Type: Book; Cost: 195; Weight: 0.200000; Quantity: 4
+Name: Scroll of Frostguard; Type: Book; Cost: 134; Weight: 0.200000; Quantity: 1
+Name: Scroll of Gonar's Goad; Type: Book; Cost: 112; Weight: 0.200000; Quantity: 1
+Name: Scroll of Greater Domination; Type: Book; Cost: 789; Weight: 0.200000; Quantity: 1
+Name: Scroll of Healing; Type: Book; Cost: 107; Weight: 0.200000; Quantity: 8
+Name: Scroll of Hellfire; Type: Book; Cost: 151; Weight: 0.200000; Quantity: 1
+Name: Scroll of Illnea's Breath; Type: Book; Cost: 158; Weight: 0.200000; Quantity: 1
+Name: Scroll of Inas' Chastening; Type: Book; Cost: 85; Weight: 0.200000; Quantity: 1
+Name: Scroll of Insight; Type: Book; Cost: 112; Weight: 0.200000; Quantity: 3
+Name: Scroll of Invisibility; Type: Book; Cost: 112; Weight: 0.200000; Quantity: 1
+Name: Scroll of Lesser Domination; Type: Book; Cost: 343; Weight: 0.200000; Quantity: 2
+Name: Scroll of Ondusi's Unhinging; Type: Book; Cost: 73; Weight: 0.200000; Quantity: 10
+Name: Scroll of Prince Ov's Brightbal; Type: Book; Cost: 112; Weight: 0.200000; Quantity: 1
+Name: Scroll of Purity of Body; Type: Book; Cost: 119; Weight: 0.200000; Quantity: 3
+Name: Scroll of Red Despair; Type: Book; Cost: 112; Weight: 0.200000; Quantity: 1
+Name: Scroll of Red Fate; Type: Book; Cost: 112; Weight: 0.200000; Quantity: 1
+Name: Scroll of Reynos' Beast Finder; Type: Book; Cost: 112; Weight: 0.200000; Quantity: 1
+Name: Scroll of Reynos' Fins; Type: Book; Cost: 145; Weight: 0.200000; Quantity: 2
+Name: Scroll of Savage Might; Type: Book; Cost: 112; Weight: 0.200000; Quantity: 1
+Name: Scroll of Shockguard; Type: Book; Cost: 134; Weight: 0.200000; Quantity: 2
+Name: Scroll of Stormward; Type: Book; Cost: 129; Weight: 0.200000; Quantity: 1
+Name: Scroll of Summon Frost Atronach; Type: Book; Cost: 235; Weight: 0.200000; Quantity: 1
+Name: Scroll of Summon Golden Saint; Type: Book; Cost: 520; Weight: 0.200000; Quantity: 1
+Name: Scroll of Summon Skeleton; Type: Book; Cost: 112; Weight: 0.200000; Quantity: 2
+Name: Scroll of The Black Storm; Type: Book; Cost: 134; Weight: 0.200000; Quantity: 1
+Name: Scroll of The Blood Thief; Type: Book; Cost: 218; Weight: 0.200000; Quantity: 2
+Name: Scroll of The Dawn Sprite; Type: Book; Cost: 112; Weight: 0.200000; Quantity: 2
+Name: Scroll of The Fifth Barrier; Type: Book; Cost: 156; Weight: 0.200000; Quantity: 1
+Name: Scroll of The Fourth Barrier; Type: Book; Cost: 134; Weight: 0.200000; Quantity: 5
+Name: Scroll of The Gambler's Prayer; Type: Book; Cost: 112; Weight: 0.200000; Quantity: 1
+Name: Scroll of The Mind Feeder; Type: Book; Cost: 218; Weight: 0.200000; Quantity: 1
+Name: Scroll of The Sixth Barrier; Type: Book; Cost: 178; Weight: 0.200000; Quantity: 1
+Name: Scroll of Tousu's Abiding Beast; Type: Book; Cost: 112; Weight: 0.200000; Quantity: 1
+Name: Scroll of Vigor; Type: Book; Cost: 112; Weight: 0.200000; Quantity: 1
+Name: Scroll of Vitality; Type: Book; Cost: 112; Weight: 0.200000; Quantity: 3
+Name: Scroll of Warrior's Blessing; Type: Book; Cost: 152; Weight: 0.200000; Quantity: 3
+Name: Scroll of Windwalker; Type: Book; Cost: 1762; Weight: 0.200000; Quantity: 1
+Name: Secret Palace Entrance Key; Type: Miscellaneous; Cost: 300; Weight: 0.000000; Quantity: 1
+Name: Septim Ring; Type: Clothing; Cost: 2400; Weight: 0.100000; Quantity: 1
+Clothing Slot: Ring; Equipped: false
+Name: Sha-Adnius Key; Type: Miscellaneous; Cost: 300; Weight: 0.000000; Quantity: 3
+Name: Sha-Adnius Slave Key; Type: Miscellaneous; Cost: 300; Weight: 0.000000; Quantity: 1
+Name: Shadowmask Ring; Type: Clothing; Cost: 219; Weight: 0.100000; Quantity: 2
+Clothing Slot: Ring; Equipped: false
+Name: Shoes of Conviction; Type: Clothing; Cost: 100; Weight: 3.000000; Quantity: 1
+Clothing Slot: Shoes; Equipped: false
+Name: Silence Charm; Type: Clothing; Cost: 75; Weight: 1.000000; Quantity: 1
+Clothing Slot: Amulet; Equipped: false
+Name: Silver Bolt; Type: Ammunition; Cost: 8; Weight: 0.100000; Quantity: 75
+Weapon Type: Bolts; Equipped: false
+Name: Slave Cell Key; Type: Miscellaneous; Cost: 300; Weight: 0.000000; Quantity: 1
+Name: Slave Key; Type: Miscellaneous; Cost: 300; Weight: 0.000000; Quantity: 1
+Name: Small Shiny Key; Type: Miscellaneous; Cost: 300; Weight: 0.000000; Quantity: 1
+Name: Soulpinch Charm; Type: Clothing; Cost: 48; Weight: 1.000000; Quantity: 1
+Clothing Slot: Amulet; Equipped: false
+Name: St. Sotha's Judgement; Type: Clothing; Cost: 55; Weight: 1.000000; Quantity: 1
+Clothing Slot: Amulet; Equipped: false
+Name: Standard Fortify Agility Potion; Type: Alchemy; Cost: 35; Weight: 0.750000; Quantity: 3
+Name: Standard Fortify Endurance; Type: Alchemy; Cost: 35; Weight: 0.750000; Quantity: 1
+Name: Standard Fortify Fatigue Potion; Type: Alchemy; Cost: 35; Weight: 0.750000; Quantity: 1
+Name: Standard Fortify Health Potion; Type: Alchemy; Cost: 35; Weight: 0.750000; Quantity: 1
+Name: Standard Fortify Intelligence; Type: Alchemy; Cost: 35; Weight: 0.750000; Quantity: 1
+Name: Standard Fortify Luck Potion; Type: Alchemy; Cost: 35; Weight: 0.750000; Quantity: 1
+Name: Standard Fortify Magicka Potion; Type: Alchemy; Cost: 35; Weight: 0.750000; Quantity: 1
+Name: Standard Fortify Speed; Type: Alchemy; Cost: 35; Weight: 0.750000; Quantity: 4
+Name: Standard Fortify Willpower; Type: Alchemy; Cost: 35; Weight: 0.750000; Quantity: 3
+Name: Standard Key; Type: Miscellaneous; Cost: 300; Weight: 0.000000; Quantity: 1
+Name: Standard Key; Type: Miscellaneous; Cost: 300; Weight: 0.000000; Quantity: 1
+Name: Standard Lightning Shield; Type: Alchemy; Cost: 35; Weight: 0.750000; Quantity: 1
+Name: Standard Potion of Invisibility; Type: Alchemy; Cost: 35; Weight: 0.750000; Quantity: 1
+Name: Standard Potion of Night-Eye; Type: Alchemy; Cost: 35; Weight: 0.750000; Quantity: 1
+Name: Standard Potion of Reflection; Type: Alchemy; Cost: 35; Weight: 0.750000; Quantity: 1
+Name: Standard Potion of Shadow; Type: Alchemy; Cost: 35; Weight: 0.750000; Quantity: 3
+Name: Standard Restore Fatigue; Type: Alchemy; Cost: 35; Weight: 0.750000; Quantity: 3
+Name: Standard Restore Health Potion; Type: Alchemy; Cost: 35; Weight: 0.750000; Quantity: 5
+Name: Standard Restore Magicka Potion; Type: Alchemy; Cost: 35; Weight: 0.750000; Quantity: 9
+Name: Standard Restore Strength; Type: Alchemy; Cost: 35; Weight: 0.750000; Quantity: 1
+Name: Steel Bolt; Type: Ammunition; Cost: 2; Weight: 0.100000; Quantity: 14
+Weapon Type: Bolts; Equipped: true
+Name: Stendarran Belt; Type: Clothing; Cost: 300; Weight: 1.000000; Quantity: 1
+Clothing Slot: Belt; Equipped: false
+Name: Stolen Key; Type: Miscellaneous; Cost: 300; Weight: 0.000000; Quantity: 1
+Name: Storage Key; Type: Miscellaneous; Cost: 300; Weight: 0.000000; Quantity: 1
+Name: Sunder; Type: Weapon; Cost: 400000; Weight: 40.000000; Quantity: 1
+Weapon Type: Blunt Weapon; Weapon Class: One Handed; Equipped: false
+Name: Teeth of the Urshilaku; Type: Clothing; Cost: 2400; Weight: 1.000000; Quantity: 1
+Clothing Slot: Amulet; Equipped: false
+Name: Tharys Chest Key; Type: Miscellaneous; Cost: 300; Weight: 0.000000; Quantity: 1
+Name: The Lost Prophecy; Type: Book; Cost: 0; Weight: 0.200000; Quantity: 1
+Name: The Seizing of the Erabenimsun; Type: Clothing; Cost: 1000; Weight: 1.000000; Quantity: 1
+Clothing Slot: Belt; Equipped: false
+Name: The Seven Curses; Type: Book; Cost: 0; Weight: 0.200000; Quantity: 1
+Name: The Seven Visions; Type: Book; Cost: 0; Weight: 0.200000; Quantity: 1
+Name: The Stranger; Type: Book; Cost: 0; Weight: 0.200000; Quantity: 1
+Name: Third Barrier Belt; Type: Clothing; Cost: 88; Weight: 1.000000; Quantity: 1
+Clothing Slot: Belt; Equipped: false
+Name: Third Barrier Ring; Type: Clothing; Cost: 75; Weight: 0.100000; Quantity: 1
+Clothing Slot: Ring; Equipped: false
+Name: Thong of Zainab; Type: Clothing; Cost: 2400; Weight: 1.000000; Quantity: 1
+Clothing Slot: Amulet; Equipped: false
+Name: Venim Manor Key; Type: Miscellaneous; Cost: 300; Weight: 0.000000; Quantity: 1
+Name: Watcher's Belt; Type: Clothing; Cost: 15; Weight: 1.000000; Quantity: 1
+Clothing Slot: Belt; Equipped: false
+Name: Wild Sty Ring; Type: Clothing; Cost: 32; Weight: 0.100000; Quantity: 1
+Clothing Slot: Ring; Equipped: false
+Name: Wraithguard; Type: Armor; Cost: 500000; Weight: 15.000000; Quantity: 1
+Armor Slot: Right Gauntlet; Armor Class: Heavy; Equipped: true
+Name: Zainsubani's Notes; Type: Book; Cost: 0; Weight: 0.200000; Quantity: 1
+Name: Zenithar's Frock; Type: Clothing; Cost: 150; Weight: 2.000000; Quantity: 1
+Clothing Slot: Shirt; Equipped: false
+Name: Zenithar's Warning; Type: Clothing; Cost: 2000; Weight: 1.000000; Quantity: 1
+Clothing Slot: Left Glove; Equipped: false
+Name: Zenithar's Wiles; Type: Clothing; Cost: 2000; Weight: 1.000000; Quantity: 1
+Clothing Slot: Right Glove; Equipped: false
 ==END==
