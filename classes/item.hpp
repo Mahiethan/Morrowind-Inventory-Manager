@@ -1,3 +1,6 @@
+#ifndef ITEM_HPP
+#define ITEM_HPP
+
 #include <string>
 
 class Item
@@ -8,9 +11,6 @@ private:
     std::string name;
     int quantity;
 public:
-    //constructor
-    Item();
-
     //getters
     std::string getName();
     float getSingleWeight();
@@ -28,3 +28,5 @@ public:
     int calculateTotalValue();
 
 };
+
+#endif // ITEM_HPP

@@ -1,13 +1,14 @@
-#include <iostream> // used to print data to stdout
-#include <unordered_map> // using a hash table data structure as the inventory to store all items and enable O(1) operations
+#include <iostream> // Used to print data to stdout
+#include <unordered_map> // Using a hash table data structure as the inventory to store each type of items (armor, weapons etc.) and to enable O(1) operations
 
 #include <fstream>
 #include <sstream>
 #include <string>
 
-#include "./classes/item.hpp"
+#include "./classes/armor.hpp"
 
-std::unordered_map<std::string,Item> inventory; // Hash table data structure to store the whole inventory items
+std::unordered_map<std::string,Armor> armorInventory; // Hash table data structure to store all Armor-type items
+// ... Repeat for other item types
 
 void parseInventory()
 {
@@ -61,14 +62,26 @@ void parseInventory()
 
         /* Based on item type, create appropriate object */
 
-        Item item;
+        if(type == "Armor")
+        {
+            Armor armor;
+            armor.setName(name);
+            armor.setSingleCost(cost);
+            armor.setSingleWeight(weight);
+            armor.setQuantity(quantity);
 
-        item.setName(name);
-        item.setSingleCost(cost);
-        item.setSingleWeight(weight);
-        item.setQuantity(quantity);
+            // get next line to obtain additional information
 
-        inventory.insert(std::make_pair(item.getName(),item));
+            // manually setting details
+            armor.setArmorSlot("Left Pauldron");
+            armor.setArmorClass("Medium");
+            armor.setEquippedStatus(true);
+
+            if(armor.getName() != "UNDEFINED")
+                armorInventory.insert(std::make_pair(armor.getName(),armor));
+
+        }
+        // ... Repeat for other Item subclasses
     }
 }
 
@@ -77,11 +90,17 @@ int main()
     // Parse through text file and obtain each inventory item
     parseInventory();
 
-    auto searchedItem = inventory.find("Adamantium Left Pauldron");
+    auto searchedItem = armorInventory.find("Adamantium Left Pauldron");
 
-    if(searchedItem != inventory.end())
+    if(searchedItem != armorInventory.end())
     {
-        // If found, calculate total cost and total weight
+        std::cout<<"Name: "<<searchedItem->second.getName()<<std::endl;
+
+        std::cout<<"Armor slot: "<<searchedItem->second.getArmorSlot()<<std::endl;
+        std::cout<<"Armor class: "<<searchedItem->second.getArmorClass()<<std::endl;
+        std::cout<<"Is armor equipped: "<<(searchedItem->second.getEquippedStatus() ? "true" : "false")<<std::endl;
+
+        // Calculate total cost and total weight
         std::cout<<"Total value: "<<searchedItem->second.calculateTotalValue()<<" septims"<<std::endl;
         std::cout<<"Total weight: "<<searchedItem->second.calculateTotalWeight()<<std::endl;
     }
