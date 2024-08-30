@@ -18,13 +18,18 @@ local objectTypeNames = {
     [tes3.objectType.repairItem] = "Repair Tool",
     [tes3.objectType.probe] = "Probe",
     [tes3.objectType.miscItem] = "Misc. Item"
+    -- Add more ObjectTypes if inventory items are appearing with type "Unknown"
 }
 
+-- Function which returns the string value of the input ObjectType
 local function getObjectTypeName(objectType)
 	return objectTypeNames[objectType] or "Unknown"
 end
 
 local function exportInventory()
+    -- Opening message of script
+    tes3.messageBox("Exporting inventory items ...")
+
     -- Define the output file path
     local filePath = "./Data Files/MWSE/mods/inventoryExporter/inventory_output.txt"
     local file = io.open(filePath, "w")
@@ -34,26 +39,30 @@ local function exportInventory()
         return
     end
 
-    tes3.messageBox("Exporting inventory items ...")
-
     -- Get player character's name
     local playerName = tes3.player.object.name
 
     -- Write header to the file
-    file:write("Inventory Export"\n")
-    file:write(string.format("Character name: %s"\n",playerName))
+    file:write("Inventory Export\n")
+    file:write(string.format("Character name: %s\n",playerName))
     file:write("======================================\n\n")
 
     -- Iterate over the player's inventory
     for _, stack in pairs(tes3.player.object.inventory) do
-        local item = stack.object
-        local count = stack.count
+        local item = stack.object -- get inventory item (Object)
 
-        file:write(string.format("Name: %s, Type: %s, Count: %d\n", item.name, getObjectTypeName(item.objectType), count))
+        local itemType = getObjectTypeName(item.objectType) -- Get type of item (weapon, armor, ingredient etc.)
+
+        local count = stack.count -- Get quantity of current item
+
+        -- Write all information about item to .txt file
+        file:write(string.format("Name: %s, Type: %s, Count: %d\n", item.name, itemType, count))
     end
  
-    file:write("==END==")
+    file:write("==END==") -- signifies end of inventory items
     file:close()
+
+    -- Closing message of script
     tes3.messageBox("Inventory exported to 'inventory_output.txt' inside the inventoryExporter mod folder.")
 end
 
