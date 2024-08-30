@@ -1,0 +1,6 @@
+Inventory Export
+Character name: Idros Neladren
+======================================
+
+Name: Adamantium Left Pauldron; Type: Armor; Cost: 800; Weight: 7.000000; Quantity: 1
+==END==

@@ -17,6 +17,7 @@ local objectTypeNames = {
     [tes3.objectType.lockpick] = "Lockpick",
     [tes3.objectType.repairItem] = "Repair Tool",
     [tes3.objectType.probe] = "Probe",
+    [tes3.objectType.light] = "Light",
     [tes3.objectType.miscItem] = "Miscellaneous"
     -- Add more ObjectTypes if inventory items are appearing with type "Unknown"
 }
@@ -103,8 +104,10 @@ local function exportInventory()
 
         local weight = item.weight or 0 -- Get weight of individual item
 
+        local isEquipped = myObject:hasItemEquipped(item.name)
+
         -- Write this general information about item to .txt file
-        file:write(string.format("Name: %s, Type: %s, Cost: %d, Weight: %f, Quantity: %d\n", item.name, item_type, cost, weight, count))
+        file:write(string.format("Name: %s; Type: %s; Cost: %d; Weight: %f; Quantity: %d\n", item.name, item_type, cost, weight, count))
 
         if(item_type == "Weapon") then -- Collect info about weapon type and class
 
@@ -112,13 +115,13 @@ local function exportInventory()
 
             local weapon_class = getWeaponClassName(item.type) -- Get class of weapon and ammunition
 
-            file:write(string.format("Weapon Type: %s, Weapon Class: %s\n", weapon_type, weapon_class))       
+            file:write(string.format("Weapon Type: %s; Weapon Class: %s; Equipped?: %s\n", weapon_type, weapon_class, isEquipped ? "true" : "false"))       
 
         elseif(item_type == "Ammunition") then -- Collect info about ammo type
 
             local weapon_type = getWeaponTypeName(item.type) -- Get type of weapon and ammunition
 
-            file:write(string.format("Weapon Type: %s\n", weapon_type))      
+            file:write(string.format("Weapon Type: %s; Equipped?: %s\n", weapon_type, isEquipped ? "true" : "false"))      
 
         end
 
