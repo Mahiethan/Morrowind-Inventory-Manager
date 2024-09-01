@@ -9,14 +9,11 @@ class Armor: public Equippable
         std::string armorSlot;
         std::string armorClass;
     public:
-        //constructor
-        Armor();
-
-        //getters
+        // getters
         std::string getArmorSlot();
         std::string getArmorClass();
 
-        //setters
+        // setters
         void setArmorSlot(std::string type);
         void setArmorClass(std::string c);
 };

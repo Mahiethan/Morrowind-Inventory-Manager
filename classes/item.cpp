@@ -1,5 +1,12 @@
 #include "item.hpp"
 
+// Destructor
+
+Item::~Item()
+{
+    // Do nothing. Only exists to enable downcasting.
+}
+
 // Setter methods
 
 void Item::setName(std::string n)

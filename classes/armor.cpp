@@ -1,20 +1,5 @@
 #include "armor.hpp"
 
-// constructor
-
-Armor::Armor()
-{
-    setName("UNDEFINED");
-    setSingleWeight(0.0);
-    setSingleCost(0);
-    setQuantity(0);
-
-    setEquippedStatus(false);
-
-    setArmorSlot("UNDEFINED");
-    setArmorClass("UNDEFINED");
-}
-
 // getter methods
 
 std::string Armor::getArmorSlot()

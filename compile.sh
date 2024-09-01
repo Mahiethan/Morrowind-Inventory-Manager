@@ -10,6 +10,6 @@ armor=./classes/armor.cpp
 
 printf "Compiling ..."
 
-g++ -g $item $equippable $armor $main -o inventoryManager
+g++ -g $item $equippable $armor $main -o inventoryManager -static
 
 echo " DONE"

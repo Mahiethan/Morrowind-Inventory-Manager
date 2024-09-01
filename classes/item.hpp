@@ -11,6 +11,9 @@ private:
     std::string name;
     int quantity;
 public:
+    //destructor (to allow for dynamic casting)
+    virtual ~Item();
+
     //getters
     std::string getName();
     float getSingleWeight();
