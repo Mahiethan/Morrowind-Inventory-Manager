@@ -212,6 +212,46 @@ void searchInventoryMenu()
     }
 }
 
+void viewInventory()
+{
+    // Iterate through all inventory items
+    for(auto item = inventory.begin(); item != inventory.end(); item++)
+    {
+        /* COPIED FROM searchInventory FUNCTION - KEEP IT UPDATED */
+        if(auto castedItem = dynamic_cast<Armor*>(item->second)) // Armor
+        {
+            std::cout<<"Name: "<<castedItem->getName()<<std::endl;
+
+            std::cout<<"Armor slot: "<<castedItem->getArmorSlot()<<std::endl;
+            std::cout<<"Armor class: "<<castedItem->getArmorClass()<<std::endl;
+            std::cout<<"Is armor equipped: "<<(castedItem->getEquippedStatus() ? "true" : "false")<<std::endl;
+
+            // Calculate total cost and total weight
+            std::cout<<"Total value: "<<castedItem->calculateTotalValue()<<" septims"<<std::endl;
+            std::cout<<"Total weight: "<<castedItem->calculateTotalWeight()<<std::endl;
+
+            std::cout<<"\n";
+        }
+        else if(auto castedItem = dynamic_cast<Weapon*>(item->second)) // Weapon
+        {
+            std::cout<<"Name: "<<castedItem->getName()<<std::endl;
+
+            std::cout<<"Weapon type: "<<castedItem->getWeaponType()<<std::endl;
+            std::cout<<"Weapon class: "<<castedItem->getWeaponClass()<<std::endl;
+            std::cout<<"Is weapon equipped: "<<(castedItem->getEquippedStatus() ? "true" : "false")<<std::endl;
+
+            // Calculate total cost and total weight
+            std::cout<<"Total value: "<<castedItem->calculateTotalValue()<<" septims"<<std::endl;
+            std::cout<<"Total weight: "<<castedItem->calculateTotalWeight()<<std::endl;
+
+            std::cout<<"\n";
+        }
+        // ... Repeat for other Item subclasses
+    }
+
+    std::cout<<"Reached end of inventory. Returning back to main menu.\n\n";
+}
+
 void mainMenu()
 {
     std::cout<<"Welcome to the Morrowind Inventory Manager\n"<<std::endl;
@@ -234,9 +274,9 @@ void mainMenu()
 
         switch(usrOption)
         {
-            case 1: std::cout<<"NOT YET IMPLEMENTED \n\n"; break;
+            case 1: viewInventory(); break;
             case 2: searchInventoryMenu(); break;
-            case 3: parseInventory(); std::cout<<"Inventory refreshed. Return back to main menu.\n\n"; break;
+            case 3: parseInventory(); std::cout<<"Inventory refreshed. Returning back to main menu.\n\n"; break;
             case 4: std::cout<<"Exiting program ... \n"; validInput = false; break;
             default: std::cout<<"Invalid input. Please try again (Select an integer between 1-4).\n\n";
         }
