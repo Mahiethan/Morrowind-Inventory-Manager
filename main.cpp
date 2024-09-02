@@ -7,6 +7,7 @@
 #include <limits>
 
 #include "./classes/armor.hpp" // Class for Armor type items
+#include "./classes/weapon.hpp" // Class for Weapon type items
 
 std::unordered_map<std::string,Item*> inventory; // Hash table data structure to store all inventory items
 
@@ -71,20 +72,20 @@ void parseInventory()
             armor->setQuantity(quantity);
 
             // get next line to obtain additional information
-            std::stringstream ss(line);
-
             std::getline(file, line);
 
+            std::stringstream next_ss(line);
+
             /* Parse "Armor Slot" */
-            std::getline(ss, parsedValue, ';');
+            std::getline(next_ss, parsedValue, ';');
             std::string armorSlot = parsedValue.substr(parsedValue.find(':') + 2);
             
             /* Parse "Armor Class" */
-            std::getline(ss, parsedValue, ';');
+            std::getline(next_ss, parsedValue, ';');
             std::string armorClass = parsedValue.substr(parsedValue.find(':') + 2);
 
             /* Parse "Equipped Status" */
-            std::getline(ss, parsedValue, ';');
+            std::getline(next_ss, parsedValue, ';');
             std::string equippedStatus = parsedValue.substr(parsedValue.find(':') + 2);
 
             // manually setting details
@@ -96,9 +97,39 @@ void parseInventory()
                 inventory.insert(std::make_pair(armor->getName(),armor));
 
         }
-        else if(type == "")
+        else if(type == "Weapon")
         {
+            Weapon* weapon = new Weapon();
+            weapon->setName(name);
+            weapon->setSingleCost(cost);
+            weapon->setSingleWeight(weight);
+            weapon->setQuantity(quantity);
 
+            // get next line to obtain additional information
+
+            std::getline(file, line);
+
+            std::stringstream next_ss(line);
+
+            /* Parse "Weapon Slot" */
+            std::getline(next_ss, parsedValue, ';');
+            std::string weaponType = parsedValue.substr(parsedValue.find(':') + 2);
+            
+            /* Parse "Weapon Class" */
+            std::getline(next_ss, parsedValue, ';');
+            std::string weaponClass = parsedValue.substr(parsedValue.find(':') + 2);
+
+            /* Parse "Equipped Status" */
+            std::getline(next_ss, parsedValue, ';');
+            std::string equippedStatus = parsedValue.substr(parsedValue.find(':') + 2);
+
+            // manually setting details
+            weapon->setWeaponType(weaponType);
+            weapon->setWeaponClass(weaponClass);
+            weapon->setEquippedStatus(equippedStatus == "true" ? true : false);
+
+            if(weapon->getName() != "UNDEFINED")
+                inventory.insert(std::make_pair(weapon->getName(),weapon));
         }
         // ... Repeat for other Item subclasses
     }
@@ -112,7 +143,7 @@ void searchInventory(std::string itemName)
 
     if(searchedItem != inventory.end())
     {
-        if(auto castedItem = dynamic_cast<Armor*>(searchedItem->second))
+        if(auto castedItem = dynamic_cast<Armor*>(searchedItem->second)) // Armor
         {
             std::cout<<"Name: "<<castedItem->getName()<<std::endl;
 
@@ -126,6 +157,21 @@ void searchInventory(std::string itemName)
 
             std::cout<<"\n";
         }
+        else if(auto castedItem = dynamic_cast<Weapon*>(searchedItem->second)) // Weapon
+        {
+            std::cout<<"Name: "<<castedItem->getName()<<std::endl;
+
+            std::cout<<"Weapon type: "<<castedItem->getWeaponType()<<std::endl;
+            std::cout<<"Weapon class: "<<castedItem->getWeaponClass()<<std::endl;
+            std::cout<<"Is weapon equipped: "<<(castedItem->getEquippedStatus() ? "true" : "false")<<std::endl;
+
+            // Calculate total cost and total weight
+            std::cout<<"Total value: "<<castedItem->calculateTotalValue()<<" septims"<<std::endl;
+            std::cout<<"Total weight: "<<castedItem->calculateTotalWeight()<<std::endl;
+
+            std::cout<<"\n";
+        }
+        // ... Repeat for other Item subclasses
     }
     else
         std::cout<<"Item \""<<itemName<<"\" was not found.\n"<<std::endl;
@@ -176,7 +222,7 @@ void mainMenu()
     {
         int usrOption;
 
-        std::cout<<"Select one of the following features: (Enter an integer)\n"<<std::endl;
+        std::cout<<"Select one of the following features: (Enter an integer between 1-4 then press ENTER key)\n"<<std::endl;
         std::cout<<"(1) View inventory\n";
         std::cout<<"(2) Search inside inventory\n";
         std::cout<<"(3) Refresh inventory\n";
@@ -192,7 +238,7 @@ void mainMenu()
             case 2: searchInventoryMenu(); break;
             case 3: parseInventory(); std::cout<<"Inventory refreshed. Return back to main menu.\n\n"; break;
             case 4: std::cout<<"Exiting program ... \n"; validInput = false; break;
-            default: std::cout<<"Invalid input. Please try again (Select an integer between 1-3).\n\n";
+            default: std::cout<<"Invalid input. Please try again (Select an integer between 1-4).\n\n";
         }
     }
 }

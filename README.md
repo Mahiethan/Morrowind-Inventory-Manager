@@ -20,17 +20,19 @@ If you have g++ installed, you can compile the program using the following comma
 
 UPDATE FOLLOWING COMMAND TO INCLUDE NEW CLASSES
 
-```
-g++ -g ./classes/item.cpp main.cpp -o inventoryManager
+```shell
+g++ -g ./classes/item.cpp ./classes/equippable.cpp ./classes/armor.cpp ./classes/weapon.cpp  main.cpp -o inventoryManager
 ```
 
-This will produce an executable `inventoryManager.exe` which you can run by clicking on it, or using a terminal window like `cmd` or similar.
+This will produce an executable `inventoryManager.exe` which you can run by clicking on it, or using a terminal window like Command Line (`cmd`) etc.
 
-If your system supports shell, you can instead run the `compile.sh` script like shown below:
+If your system supports shell, you can instead run the `compile.sh` script by clicking on the file, or by typing the following command on a shell-compatible terminal window:
 
-```
+```shell
 sh compile.sh
 ```
+
+The above script *only* works inside the `./Morrowind-Inventory-Manager` folder, and not within any subdirectories. Additionally, the script will not compile the code if the program is running, so make sure to *exit the program before compiling*.
 
 ## Where to place the Lua script inside the `inventoryExplorer` folder?
 

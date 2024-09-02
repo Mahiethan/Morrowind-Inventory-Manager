@@ -6,4 +6,8 @@ Name: Adamantium Left Pauldron; Type: Armor; Cost: 800; Weight: 7.000000; Quanti
 Armor Slot: Left Pauldron; Armor Class: Medium; Equipped: true
 Name: Adamantium Right Pauldron; Type: Armor; Cost: 800; Weight: 7.000000; Quantity: 1
 Armor Slot: Right Pauldron; Armor Class: Medium; Equipped: true
+Name: Hanin's Revenge; Type: Weapon; Cost: 20000; Weight: 24.000000; Quantity: 1
+Weapon Type: Long Blade; Weapon Class: One Handed; Equipped: true
+Name: Dwarven Crossbow; Type: Weapon; Cost: 1200; Weight: 10.000000; Quantity: 1
+Weapon Type: Crossbow; Weapon Class: Marksman; Equipped: false
 ==END==
