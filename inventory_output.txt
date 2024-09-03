@@ -10,4 +10,12 @@ Name: Hanin's Revenge; Type: Weapon; Cost: 20000; Weight: 24.000000; Quantity: 1
 Weapon Type: Long Blade; Weapon Class: One Handed; Equipped: true
 Name: Dwarven Crossbow; Type: Weapon; Cost: 1200; Weight: 10.000000; Quantity: 1
 Weapon Type: Crossbow; Weapon Class: Marksman; Equipped: false
+Name: Journeyman's Probe; Type: Probe; Cost: 50; Weight: 0.250000; Quantity: 5
+Condition: 25; Equipped: false
+Name: Master's Probe; Type: Probe; Cost: 100; Weight: 0.250000; Quantity: 2
+Condition: 25; Equipped: false
+Name: Journeyman's Lockpick; Type: Lockpick; Cost: 50; Weight: 0.250000; Quantity: 4
+Condition: 25; Equipped: false
+Name: Master's Lockpick; Type: Lockpick; Cost: 100; Weight: 0.250000; Quantity: 5
+Condition: 25; Equipped: false
 ==END==

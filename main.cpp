@@ -8,6 +8,7 @@
 
 #include "./classes/armor.hpp" // Class for Armor type items
 #include "./classes/weapon.hpp" // Class for Weapon type items
+#include "./classes/thieves_tool.hpp" // Class for Lockpick and Probe items
 
 std::unordered_map<std::string,Item*> inventory; // Hash table data structure to store all inventory items
 
@@ -88,7 +89,6 @@ void parseInventory()
             std::getline(next_ss, parsedValue, ';');
             std::string equippedStatus = parsedValue.substr(parsedValue.find(':') + 2);
 
-            // manually setting details
             armor->setArmorSlot(armorSlot);
             armor->setArmorClass(armorClass);
             armor->setEquippedStatus(equippedStatus == "true" ? true : false);
@@ -123,13 +123,41 @@ void parseInventory()
             std::getline(next_ss, parsedValue, ';');
             std::string equippedStatus = parsedValue.substr(parsedValue.find(':') + 2);
 
-            // manually setting details
             weapon->setWeaponType(weaponType);
             weapon->setWeaponClass(weaponClass);
             weapon->setEquippedStatus(equippedStatus == "true" ? true : false);
 
             if(weapon->getName() != "UNDEFINED")
                 inventory.insert(std::make_pair(weapon->getName(),weapon));
+        }
+        else if(type == "Lockpick" | type == "Probe")
+        {
+            ThievesTool* tool = new ThievesTool();
+            tool->setName(name);
+            tool->setSingleCost(cost);
+            tool->setSingleWeight(weight);
+            tool->setQuantity(quantity);
+
+            // get next line to obtain additional information
+
+            std::getline(file, line);
+
+            std::stringstream next_ss(line);
+
+            /* Parse "Condition" */
+            std::getline(next_ss, parsedValue, ';');
+            int condition = std::stoi(parsedValue.substr(parsedValue.find(':') + 2));
+
+            /* Parse "Equipped Status" */
+            std::getline(next_ss, parsedValue, ';');
+            std::string equippedStatus = parsedValue.substr(parsedValue.find(':') + 2);
+
+            tool->setType(type);
+            tool->setCondition(condition);
+            tool->setEquippedStatus(equippedStatus == "true" ? true : false);
+
+            if(tool->getName() != "UNDEFINED")
+                inventory.insert(make_pair(tool->getName(),tool));
         }
         // ... Repeat for other Item subclasses
     }
@@ -164,6 +192,20 @@ void searchInventory(std::string itemName)
             std::cout<<"Weapon type: "<<castedItem->getWeaponType()<<std::endl;
             std::cout<<"Weapon class: "<<castedItem->getWeaponClass()<<std::endl;
             std::cout<<"Is weapon equipped: "<<(castedItem->getEquippedStatus() ? "true" : "false")<<std::endl;
+
+            // Calculate total cost and total weight
+            std::cout<<"Total value: "<<castedItem->calculateTotalValue()<<" septims"<<std::endl;
+            std::cout<<"Total weight: "<<castedItem->calculateTotalWeight()<<std::endl;
+
+            std::cout<<"\n";
+        }
+        else if(auto castedItem = dynamic_cast<ThievesTool*>(searchedItem->second)) // Weapon
+        {
+            std::cout<<"Name: "<<castedItem->getName()<<std::endl;
+
+            std::cout<<"Tool type: "<<castedItem->getType()<<std::endl;
+            std::cout<<"Item condition: "<<castedItem->getCondition()<<std::endl;
+            std::cout<<"Is tool equipped: "<<(castedItem->getEquippedStatus() ? "true" : "false")<<std::endl;
 
             // Calculate total cost and total weight
             std::cout<<"Total value: "<<castedItem->calculateTotalValue()<<" septims"<<std::endl;
@@ -239,6 +281,20 @@ void viewInventory()
             std::cout<<"Weapon type: "<<castedItem->getWeaponType()<<std::endl;
             std::cout<<"Weapon class: "<<castedItem->getWeaponClass()<<std::endl;
             std::cout<<"Is weapon equipped: "<<(castedItem->getEquippedStatus() ? "true" : "false")<<std::endl;
+
+            // Calculate total cost and total weight
+            std::cout<<"Total value: "<<castedItem->calculateTotalValue()<<" septims"<<std::endl;
+            std::cout<<"Total weight: "<<castedItem->calculateTotalWeight()<<std::endl;
+
+            std::cout<<"\n";
+        }
+        else if(auto castedItem = dynamic_cast<ThievesTool*>(item->second)) // Weapon
+        {
+            std::cout<<"Name: "<<castedItem->getName()<<std::endl;
+
+            std::cout<<"Tool type: "<<castedItem->getType()<<std::endl;
+            std::cout<<"Item condition: "<<castedItem->getCondition()<<std::endl;
+            std::cout<<"Is tool equipped: "<<(castedItem->getEquippedStatus() ? "true" : "false")<<std::endl;
 
             // Calculate total cost and total weight
             std::cout<<"Total value: "<<castedItem->calculateTotalValue()<<" septims"<<std::endl;
