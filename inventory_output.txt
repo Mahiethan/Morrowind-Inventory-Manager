@@ -6,6 +6,10 @@ Name: Adamantium Left Pauldron; Type: Armor; Cost: 800; Weight: 7.000000; Quanti
 Armor Slot: Left Pauldron; Armor Class: Medium; Equipped: true
 Name: Adamantium Right Pauldron; Type: Armor; Cost: 800; Weight: 7.000000; Quantity: 1
 Armor Slot: Right Pauldron; Armor Class: Medium; Equipped: true
+Name: Dragon's Bite; Type: Armor; Cost: 1130; Weight: 4.000000; Quantity: 1
+Armor Slot: Helmet; Armor Class: Medium; Equipped: true
+Name: Boots of the Apostle; Type: Armor; Cost: 55000; Weight: 10.000000; Quantity: 1
+Armor Slot: Boots; Armor Class: Light; Equipped: false
 Name: Hanin's Revenge; Type: Weapon; Cost: 20000; Weight: 24.000000; Quantity: 1
 Weapon Type: Long Blade; Weapon Class: One Handed; Equipped: true
 Name: Dwarven Crossbow; Type: Weapon; Cost: 1200; Weight: 10.000000; Quantity: 1
@@ -18,4 +22,16 @@ Name: Journeyman's Lockpick; Type: Lockpick; Cost: 50; Weight: 0.250000; Quantit
 Condition: 25; Equipped: false
 Name: Master's Lockpick; Type: Lockpick; Cost: 100; Weight: 0.250000; Quantity: 5
 Condition: 25; Equipped: false
+Name: Moon-and-Star; Type: Clothing; Cost: 2000; Weight: 0.100000; Quantity: 1
+Clothing Slot: Ring; Equipped: true
+Name: Necromancer's Amulet; Type: Clothing; Cost: 240; Weight: 1.000000; Quantity: 1
+Clothing Slot: Amulet; Equipped: true
+Name: Zenithar's Frock; Type: Clothing; Cost: 150; Weight: 2.000000; Quantity: 1
+Clothing Slot: Shirt; Equipped: false
+Name: Pants of Recovery; Type: Clothing; Cost: 1560; Weight: 2.000000; Quantity: 1
+Clothing Slot: Pants; Equipped: true
+Name: Shoes of Conviction; Type: Clothing; Cost: 100; Weight: 3.000000; Quantity: 1
+Clothing Slot: Shoes; Equipped: false
+Name: Belt of Feet of Notorgo; Type: Clothing; Cost: 6; Weight: 1.000000; Quantity: 1
+Clothing Slot: Belt; Equipped: false
 ==END==
