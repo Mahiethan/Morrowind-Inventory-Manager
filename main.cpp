@@ -10,6 +10,7 @@
 #include "./classes/weapon.hpp" // Class for Weapon type items
 #include "./classes/thieves_tool.hpp" // Class for Lockpick and Probe items
 #include "./classes/clothing.hpp" // Class for Clothing type items
+#include "./classes/misc.hpp" // Class for Miscellaneous items (e.g. keys, coins)
 
 std::unordered_map<std::string,Item*> inventory; // Hash table data structure to store all inventory items
 
@@ -188,6 +189,25 @@ void parseInventory()
             if(clothing->getName() != "UNDEFINED")
                 inventory.insert(make_pair(clothing->getName(),clothing));
         }
+        else if(type == "Miscellaneous")
+        {
+            Miscellaneous* misc = new Miscellaneous();
+            misc->setName(name);
+            misc->setSingleCost(cost);
+            misc->setSingleWeight(weight);
+            misc->setQuantity(quantity);
+
+            // obtain additional type info from Lua script
+
+            // get next line to obtain additional information
+
+            // std::getline(file, line);
+
+            // std::stringstream next_ss(line);
+
+            if(misc->getName() != "UNDEFINED")
+                inventory.insert(make_pair(misc->getName(),misc));
+        }
         // ... Repeat for other Item subclasses
     }
 }
@@ -248,6 +268,18 @@ void searchInventory(std::string itemName)
 
             std::cout<<"Clothing slot: "<<castedItem->getClothingSlot()<<std::endl;
             std::cout<<"Is clothing equipped: "<<(castedItem->getEquippedStatus() ? "true" : "false")<<std::endl;
+
+            // Calculate total cost and total weight
+            std::cout<<"Total value: "<<castedItem->calculateTotalValue()<<" septims"<<std::endl;
+            std::cout<<"Total weight: "<<castedItem->calculateTotalWeight()<<std::endl;
+
+            std::cout<<"\n";
+        }
+        else if(auto castedItem = dynamic_cast<Miscellaneous*>(searchedItem->second)) // Weapon
+        {
+            std::cout<<"Name: "<<castedItem->getName()<<std::endl;
+
+            //std::cout<<"Item type: "<<castedItem->getType()<<std::endl;
 
             // Calculate total cost and total weight
             std::cout<<"Total value: "<<castedItem->calculateTotalValue()<<" septims"<<std::endl;
@@ -352,6 +384,18 @@ void viewInventory()
 
             std::cout<<"Clothing slot: "<<castedItem->getClothingSlot()<<std::endl;
             std::cout<<"Is clothing equipped: "<<(castedItem->getEquippedStatus() ? "true" : "false")<<std::endl;
+
+            // Calculate total cost and total weight
+            std::cout<<"Total value: "<<castedItem->calculateTotalValue()<<" septims"<<std::endl;
+            std::cout<<"Total weight: "<<castedItem->calculateTotalWeight()<<std::endl;
+
+            std::cout<<"\n";
+        }
+        else if(auto castedItem = dynamic_cast<Miscellaneous*>(item->second)) // Weapon
+        {
+            std::cout<<"Name: "<<castedItem->getName()<<std::endl;
+
+            //std::cout<<"Item type: "<<castedItem->getType()<<std::endl;
 
             // Calculate total cost and total weight
             std::cout<<"Total value: "<<castedItem->calculateTotalValue()<<" septims"<<std::endl;

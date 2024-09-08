@@ -34,4 +34,6 @@ Name: Shoes of Conviction; Type: Clothing; Cost: 100; Weight: 3.000000; Quantity
 Clothing Slot: Shoes; Equipped: false
 Name: Belt of Feet of Notorgo; Type: Clothing; Cost: 6; Weight: 1.000000; Quantity: 1
 Clothing Slot: Belt; Equipped: false
+Name: Ancient Dwemer Door Key; Type: Miscellaneous; Cost: 300; Weight: 0.000000; Quantity: 2
+Name: Gold; Type: Miscellaneous; Cost: 1; Weight: 0.000000; Quantity: 74523
 ==END==
