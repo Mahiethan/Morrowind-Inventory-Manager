@@ -35,5 +35,13 @@ Clothing Slot: Shoes; Equipped: false
 Name: Belt of Feet of Notorgo; Type: Clothing; Cost: 6; Weight: 1.000000; Quantity: 1
 Clothing Slot: Belt; Equipped: false
 Name: Ancient Dwemer Door Key; Type: Miscellaneous; Cost: 300; Weight: 0.000000; Quantity: 2
-Name: Gold; Type: Miscellaneous; Cost: 1; Weight: 0.000000; Quantity: 74523
+Type: Key
+Name: Gold; Type: Miscellaneous; Cost: 1; Weight: 0.000000; Quantity: 70152
+Type: Gold
+Name: Azura's Star; Type: Miscellaneous; Cost: 5000; Weight: 2.000000; Quantity: 1
+Type: Soul Gem; Soul Capacity: 15000
+Name: Old Man's Lucky Coin; Type: Miscellaneous; Cost: 0; Weight: 0.000000; Quantity: 1
+Type: Other
+Name: Master Propylon Index; Type: Miscellaneous; Cost: 2000; Weight: 3.000000; Quantity: 1
+Type: Other
 ==END==

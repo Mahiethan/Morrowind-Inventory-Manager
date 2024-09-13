@@ -216,6 +216,8 @@ local function exportInventory()
                 file:write(string.format("Type: Soul Gem; Soul Capacity: %d\n",soul_gem_capacity))
             elseif(item.isKey) then
                 file:write(string.format("Type: Key\n"))
+            else
+                file:write(string.format("Type: Other\n")) -- Undefined types e.g. Master Propylon Index, Old Man's Lucky Coin
             end
         end
 
