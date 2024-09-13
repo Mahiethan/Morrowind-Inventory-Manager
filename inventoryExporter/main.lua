@@ -208,6 +208,15 @@ local function exportInventory()
             local light_time_left = item.timeLeft; -- Get time remaining for light item
 
             file:write(string.format("Time Left: %s; Equipped: %s\n", light_time_left, isEquipped))                   
+        elseif(item_type == "Miscellaneous") then -- Collect info about misc. items (Gold, Soul Gems, Keys)
+            if(item.isGold) then
+                file:write(string.format("Type: Gold\n"))
+            elseif(item.isSoulGem) then
+                local soul_gem_capacity = item.soulGemCapacity
+                file:write(string.format("Type: Soul Gem; Soul Capacity: %d\n",soul_gem_capacity))
+            elseif(item.isKey) then
+                file:write(string.format("Type: Key\n"))
+            end
         end
 
     end
