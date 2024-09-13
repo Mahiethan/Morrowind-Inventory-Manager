@@ -6,7 +6,7 @@
 class Miscellaneous: public Item
 {
     private:
-        std::string type;
+        std::string type; // Coin, Soul Gem, Key, Other
     public:
         // getter
         std::string getType();

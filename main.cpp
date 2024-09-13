@@ -11,6 +11,7 @@
 #include "./classes/thieves_tool.hpp" // Class for Lockpick and Probe items
 #include "./classes/clothing.hpp" // Class for Clothing type items
 #include "./classes/misc.hpp" // Class for Miscellaneous items (e.g. keys, coins)
+#include "./classes/soul_gem.hpp" // Class for Soul Gem items
 
 std::unordered_map<std::string,Item*> inventory; // Hash table data structure to store all inventory items
 
@@ -191,22 +192,46 @@ void parseInventory()
         }
         else if(type == "Miscellaneous")
         {
-            Miscellaneous* misc = new Miscellaneous();
-            misc->setName(name);
-            misc->setSingleCost(cost);
-            misc->setSingleWeight(weight);
-            misc->setQuantity(quantity);
-
-            // obtain additional type info from Lua script
-
             // get next line to obtain additional information
 
-            // std::getline(file, line);
+            std::getline(file, line);
 
-            // std::stringstream next_ss(line);
+            std::stringstream next_ss(line);
 
-            if(misc->getName() != "UNDEFINED")
-                inventory.insert(make_pair(misc->getName(),misc));
+            /* Parse "Type" */
+            std::getline(next_ss, parsedValue, ';');
+            std::string miscType = parsedValue.substr(parsedValue.find(':') + 2);
+
+            if(miscType == "Soul Gem") // Create the SoulGem subclass if this is a Soul Gem type
+            {
+                /* Parse "Soul Gem Capacity" */
+                std::getline(next_ss, parsedValue, ';');
+                int soulGemCapacity = std::stoi(parsedValue.substr(parsedValue.find(':') + 2));
+
+                SoulGem* soul_gem = new SoulGem();
+                soul_gem->setName(name);
+                soul_gem->setSingleCost(cost);
+                soul_gem->setSingleWeight(weight);
+                soul_gem->setQuantity(quantity);
+                soul_gem->setType(miscType);
+
+                soul_gem->setSoulCapacity(soulGemCapacity);
+
+                if(soul_gem->getName() != "UNDEFINED")
+                    inventory.insert(make_pair(soul_gem->getName(),soul_gem));
+            }
+            else // Create a standard Misc object for other types
+            {
+                Miscellaneous* misc = new Miscellaneous();
+                misc->setName(name);
+                misc->setSingleCost(cost);
+                misc->setSingleWeight(weight);
+                misc->setQuantity(quantity);
+                misc->setType(miscType);
+
+                if(misc->getName() != "UNDEFINED")
+                    inventory.insert(make_pair(misc->getName(),misc));
+            }
         }
         // ... Repeat for other Item subclasses
     }
@@ -248,7 +273,7 @@ void searchInventory(std::string itemName)
 
             std::cout<<"\n";
         }
-        else if(auto castedItem = dynamic_cast<ThievesTool*>(searchedItem->second)) // Weapon
+        else if(auto castedItem = dynamic_cast<ThievesTool*>(searchedItem->second)) // Thieves Tool (Lockpicks and Probes)
         {
             std::cout<<"Name: "<<castedItem->getName()<<std::endl;
 
@@ -262,7 +287,7 @@ void searchInventory(std::string itemName)
 
             std::cout<<"\n";
         }
-        else if(auto castedItem = dynamic_cast<Clothing*>(searchedItem->second)) // Weapon
+        else if(auto castedItem = dynamic_cast<Clothing*>(searchedItem->second)) // Clothing items
         {
             std::cout<<"Name: "<<castedItem->getName()<<std::endl;
 
@@ -275,11 +300,14 @@ void searchInventory(std::string itemName)
 
             std::cout<<"\n";
         }
-        else if(auto castedItem = dynamic_cast<Miscellaneous*>(searchedItem->second)) // Weapon
+        else if(auto castedItem = dynamic_cast<Miscellaneous*>(searchedItem->second)) // Misc items (Coin, Soul Gem, Key, Other)
         {
             std::cout<<"Name: "<<castedItem->getName()<<std::endl;
 
-            //std::cout<<"Item type: "<<castedItem->getType()<<std::endl;
+            std::cout<<"Item type: "<<castedItem->getType()<<std::endl;
+
+            if(auto soulGemItem = dynamic_cast<SoulGem*>(castedItem))
+                std::cout<<"Soul capacity: "<<soulGemItem->getSoulCapacity()<<std::endl;
 
             // Calculate total cost and total weight
             std::cout<<"Total value: "<<castedItem->calculateTotalValue()<<" septims"<<std::endl;
@@ -395,7 +423,10 @@ void viewInventory()
         {
             std::cout<<"Name: "<<castedItem->getName()<<std::endl;
 
-            //std::cout<<"Item type: "<<castedItem->getType()<<std::endl;
+            std::cout<<"Item type: "<<castedItem->getType()<<std::endl;
+
+            if(auto soulGemItem = dynamic_cast<SoulGem*>(castedItem))
+                std::cout<<"Soul capacity: "<<soulGemItem->getSoulCapacity()<<std::endl;
 
             // Calculate total cost and total weight
             std::cout<<"Total value: "<<castedItem->calculateTotalValue()<<" septims"<<std::endl;
