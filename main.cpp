@@ -12,11 +12,14 @@
 #include "./classes/clothing.hpp" // Class for Clothing type items
 #include "./classes/misc.hpp" // Class for Miscellaneous items (e.g. keys, coins)
 #include "./classes/soul_gem.hpp" // Class for Soul Gem items
+#include "./classes/apparatus.hpp" // Class for Apparatus items
 
 std::unordered_map<std::string,Item*> inventory; // Hash table data structure to store all inventory items
 
 void parseInventory()
 {
+    inventory.clear(); // Clear any items stored inside the hash map before parsing
+
     /* Open text file and check if it exists */
     std::ifstream file("inventory_output.txt"); 
     
@@ -190,6 +193,29 @@ void parseInventory()
             if(clothing->getName() != "UNDEFINED")
                 inventory.insert(make_pair(clothing->getName(),clothing));
         }
+        else if(type == "Apparatus")  // Create the Apparatus subclass if this is an Apparatus type
+        {
+            Apparatus* apparatus = new Apparatus();
+            apparatus->setName(name);
+            apparatus->setSingleCost(cost);
+            apparatus->setSingleWeight(weight);
+            apparatus->setQuantity(quantity);
+
+            // get next line to obtain additional information
+
+            std::getline(file, line);
+
+            std::stringstream next_ss(line);
+
+            /* Parse "Apparatus Type" */
+            std::getline(next_ss, parsedValue, ';');
+            std::string apparatusType = parsedValue.substr(parsedValue.find(':') + 2);
+
+            apparatus->setApparatusType(apparatusType);
+
+            if(apparatus->getName() != "UNDEFINED")
+                inventory.insert(make_pair(apparatus->getName(),apparatus));
+        }
         else if(type == "Miscellaneous")
         {
             // get next line to obtain additional information
@@ -213,6 +239,7 @@ void parseInventory()
                 soul_gem->setSingleCost(cost);
                 soul_gem->setSingleWeight(weight);
                 soul_gem->setQuantity(quantity);
+
                 soul_gem->setType(miscType);
 
                 soul_gem->setSoulCapacity(soulGemCapacity);
@@ -227,6 +254,7 @@ void parseInventory()
                 misc->setSingleCost(cost);
                 misc->setSingleWeight(weight);
                 misc->setQuantity(quantity);
+
                 misc->setType(miscType);
 
                 if(misc->getName() != "UNDEFINED")
@@ -293,6 +321,18 @@ void searchInventory(std::string itemName)
 
             std::cout<<"Clothing slot: "<<castedItem->getClothingSlot()<<std::endl;
             std::cout<<"Is clothing equipped: "<<(castedItem->getEquippedStatus() ? "true" : "false")<<std::endl;
+
+            // Calculate total cost and total weight
+            std::cout<<"Total value: "<<castedItem->calculateTotalValue()<<" septims"<<std::endl;
+            std::cout<<"Total weight: "<<castedItem->calculateTotalWeight()<<std::endl;
+
+            std::cout<<"\n";
+        }
+        else if(auto castedItem = dynamic_cast<Apparatus*>(searchedItem->second)) // Apparatus items (Alembic, Calcinator, Mortar and Pestle, Retort)
+        {
+            std::cout<<"Name: "<<castedItem->getName()<<std::endl;
+
+            std::cout<<"Apparatus type: "<<castedItem->getApparatusType()<<std::endl;
 
             // Calculate total cost and total weight
             std::cout<<"Total value: "<<castedItem->calculateTotalValue()<<" septims"<<std::endl;
@@ -419,7 +459,19 @@ void viewInventory()
 
             std::cout<<"\n";
         }
-        else if(auto castedItem = dynamic_cast<Miscellaneous*>(item->second)) // Weapon
+        else if(auto castedItem = dynamic_cast<Apparatus*>(item->second)) // Apparatus items (Alembic, Calcinator, Mortar and Pestle, Retort)
+        {
+            std::cout<<"Name: "<<castedItem->getName()<<std::endl;
+
+            std::cout<<"Apparatus type: "<<castedItem->getApparatusType()<<std::endl;
+
+            // Calculate total cost and total weight
+            std::cout<<"Total value: "<<castedItem->calculateTotalValue()<<" septims"<<std::endl;
+            std::cout<<"Total weight: "<<castedItem->calculateTotalWeight()<<std::endl;
+
+            std::cout<<"\n";
+        }
+        else if(auto castedItem = dynamic_cast<Miscellaneous*>(item->second)) // Misc items (Coin, Soul Gem, Key, Other)
         {
             std::cout<<"Name: "<<castedItem->getName()<<std::endl;
 

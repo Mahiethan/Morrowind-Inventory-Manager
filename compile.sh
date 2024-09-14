@@ -20,10 +20,12 @@ misc=./classes/misc.cpp
 
 soul_gem=./classes/soul_gem.cpp
 
+apparatus=./classes/apparatus.cpp
+
 # add file paths for more classes here
 
 printf "Compiling ..."
 
-g++ -g $item $equippable $armor $weapon $thieves_tool $clothing $misc $soul_gem $main -o inventoryManager -static
+g++ -g $item $equippable $armor $weapon $thieves_tool $clothing $misc $soul_gem $apparatus $main -o inventoryManager -static
 
 echo " DONE"
