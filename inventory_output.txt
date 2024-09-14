@@ -44,4 +44,12 @@ Name: Old Man's Lucky Coin; Type: Miscellaneous; Cost: 0; Weight: 0.000000; Quan
 Type: Other
 Name: Master Propylon Index; Type: Miscellaneous; Cost: 2000; Weight: 3.000000; Quantity: 1
 Type: Other
+Name: Master's Mortar and Pestle; Type: Apparatus; Cost: 2400; Weight: 3.000000; Quantity: 1
+Type: Mortar and Pestle
+Name: Master's Retort; Type: Apparatus; Cost: 480; Weight: 4.000000; Quantity: 1
+Type: Retort
+Name: Grandmaster's Alembic; Type: Apparatus; Cost: 4000; Weight: 3.000000; Quantity: 1
+Type: Alembic
+Name: Grandmaster's Calcinator; Type: Apparatus; Cost: 4000; Weight: 8.000000; Quantity: 1
+Type: Calcinator
 ==END==

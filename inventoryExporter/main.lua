@@ -92,6 +92,14 @@ local armorClassNames = {
     [2] = "Heavy"
 }
 
+-- Dictionary used to convert an apparatus type to its matching string value
+local apparatusTypeNames = {
+    [0] = "Mortar and Pestle",
+    [1] = "Alembic",
+    [2] = "Calcinator",
+    [3] = "Retort"
+}
+
 
 -- Function which returns the string value of the input ObjectType
 local function getObjectTypeName(objectType)
@@ -121,6 +129,11 @@ end
 -- Function which returns the string value of the input armorClass
 local function getArmorClassName(armorClass)
 	return armorClassNames[armorClass] or "Unknown"
+end
+
+-- Function which returns the string value of the input apparatusType
+local function getApparatusTypeName(apparatusType)
+	return apparatusTypeNames[apparatusType] or "Unknown"
 end
 
 
@@ -207,7 +220,12 @@ local function exportInventory()
 
             local light_time_left = item.timeLeft; -- Get time remaining for light item
 
-            file:write(string.format("Time Left: %s; Equipped: %s\n", light_time_left, isEquipped))                   
+            file:write(string.format("Time Left: %s; Equipped: %s\n", light_time_left, isEquipped))
+        elseif(item_type == "Apparatus") then -- Collect info about Apparatus items
+            
+            local apparatusType = getApparatusTypeName(item.type)
+
+            file:write(string.format("Type: %s\n",apparatusType))
         elseif(item_type == "Miscellaneous") then -- Collect info about misc. items (Gold, Soul Gems, Keys)
             if(item.isGold) then
                 file:write(string.format("Type: Gold\n"))
