@@ -218,9 +218,9 @@ local function exportInventory()
             file:write(string.format("Condition: %s; Equipped: %s\n", probe_condition, isEquipped))
         elseif(item_type == "Light") then -- Collect info about light type
 
-            local light_time_left = item.timeLeft; -- Get time remaining for light item
+            local light_time_left = item:getTimeLeft(item); -- Get time remaining for light item (only shows maximum duration of light item)
 
-            file:write(string.format("Time Left: %s; Equipped: %s\n", light_time_left, isEquipped))
+            file:write(string.format("Duration: %d; Equipped: %s\n", light_time_left, isEquipped))
         elseif(item_type == "Apparatus") then -- Collect info about Apparatus items
             
             local apparatusType = getApparatusTypeName(item.type)

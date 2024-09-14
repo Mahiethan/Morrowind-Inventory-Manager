@@ -52,4 +52,8 @@ Name: Grandmaster's Alembic; Type: Apparatus; Cost: 4000; Weight: 3.000000; Quan
 Type: Alembic
 Name: Grandmaster's Calcinator; Type: Apparatus; Cost: 4000; Weight: 8.000000; Quantity: 1
 Type: Calcinator
+Name: Travel Lantern; Type: Light; Cost: 10; Weight: 3.000000; Quantity: 1
+Duration: 220; Equipped: false
+Name: Bamboo Candlestick; Type: Light; Cost: 3; Weight: 2.000000; Quantity: 1
+Duration: 120; Equipped: false
 ==END==
