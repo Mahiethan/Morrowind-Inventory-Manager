@@ -21,7 +21,7 @@ If you have g++ installed, you can compile the program using the following comma
 UPDATE FOLLOWING COMMAND TO INCLUDE NEW CLASSES
 
 ```shell
-g++ -g ./classes/item.cpp ./classes/equippable.cpp ./classes/armor.cpp ./classes/weapon.cpp ./classes/thieves_tool.cpp ./classes/clothing.cpp ./classes/misc.cpp ./classes/soul_gem.cpp ./classes/apparatus.cpp main.cpp -o inventoryManager
+g++ -g ./classes/item.cpp ./classes/equippable.cpp ./classes/armor.cpp ./classes/weapon.cpp ./classes/thieves_tool.cpp ./classes/clothing.cpp ./classes/misc.cpp ./classes/soul_gem.cpp ./classes/apparatus.cpp ./classes/light.cpp main.cpp -o inventoryManager
 ```
 
 This will produce an executable `inventoryManager.exe` which you can run by clicking on it, or using a terminal window like Command Line (`cmd`) etc.

@@ -13,6 +13,7 @@
 #include "./classes/misc.hpp" // Class for Miscellaneous items (e.g. keys, coins)
 #include "./classes/soul_gem.hpp" // Class for Soul Gem items
 #include "./classes/apparatus.hpp" // Class for Apparatus items
+#include "./classes/light.hpp" // Class for Light items
 
 std::unordered_map<std::string,Item*> inventory; // Hash table data structure to store all inventory items
 
@@ -193,7 +194,7 @@ void parseInventory()
             if(clothing->getName() != "UNDEFINED")
                 inventory.insert(make_pair(clothing->getName(),clothing));
         }
-        else if(type == "Apparatus")  // Create the Apparatus subclass if this is an Apparatus type
+        else if(type == "Apparatus")
         {
             Apparatus* apparatus = new Apparatus();
             apparatus->setName(name);
@@ -215,6 +216,34 @@ void parseInventory()
 
             if(apparatus->getName() != "UNDEFINED")
                 inventory.insert(make_pair(apparatus->getName(),apparatus));
+        }
+        else if(type == "Light")
+        {
+            Light* light = new Light();
+            light->setName(name);
+            light->setSingleCost(cost);
+            light->setSingleWeight(weight);
+            light->setQuantity(quantity);
+
+            // get next line to obtain additional information
+
+            std::getline(file, line);
+
+            std::stringstream next_ss(line);
+
+            /* Parse "Duration" */
+            std::getline(next_ss, parsedValue, ';');
+            int lightDuration = std::stoi(parsedValue.substr(parsedValue.find(':') + 2));
+
+            /* Parse "Equipped Status" */
+            std::getline(next_ss, parsedValue, ';');
+            std::string equippedStatus = parsedValue.substr(parsedValue.find(':') + 2);
+
+            light->setDuration(lightDuration);
+            light->setEquippedStatus(equippedStatus == "true" ? true : false);
+
+            if(light->getName() != "UNDEFINED")
+                inventory.insert(make_pair(light->getName(),light));
         }
         else if(type == "Miscellaneous")
         {
@@ -333,6 +362,19 @@ void searchInventory(std::string itemName)
             std::cout<<"Name: "<<castedItem->getName()<<std::endl;
 
             std::cout<<"Apparatus type: "<<castedItem->getApparatusType()<<std::endl;
+
+            // Calculate total cost and total weight
+            std::cout<<"Total value: "<<castedItem->calculateTotalValue()<<" septims"<<std::endl;
+            std::cout<<"Total weight: "<<castedItem->calculateTotalWeight()<<std::endl;
+
+            std::cout<<"\n";
+        }
+        else if(auto castedItem = dynamic_cast<Light*>(searchedItem->second)) // Apparatus items (Alembic, Calcinator, Mortar and Pestle, Retort)
+        {
+            std::cout<<"Name: "<<castedItem->getName()<<std::endl;
+
+            std::cout<<"Duration: "<<castedItem->getDuration()<<std::endl;
+            std::cout<<"Is light equipped: "<<(castedItem->getEquippedStatus() ? "true" : "false")<<std::endl;
 
             // Calculate total cost and total weight
             std::cout<<"Total value: "<<castedItem->calculateTotalValue()<<" septims"<<std::endl;
@@ -464,6 +506,19 @@ void viewInventory()
             std::cout<<"Name: "<<castedItem->getName()<<std::endl;
 
             std::cout<<"Apparatus type: "<<castedItem->getApparatusType()<<std::endl;
+
+            // Calculate total cost and total weight
+            std::cout<<"Total value: "<<castedItem->calculateTotalValue()<<" septims"<<std::endl;
+            std::cout<<"Total weight: "<<castedItem->calculateTotalWeight()<<std::endl;
+
+            std::cout<<"\n";
+        }
+        else if(auto castedItem = dynamic_cast<Light*>(item->second)) // Apparatus items (Alembic, Calcinator, Mortar and Pestle, Retort)
+        {
+            std::cout<<"Name: "<<castedItem->getName()<<std::endl;
+
+            std::cout<<"Duration: "<<castedItem->getDuration()<<std::endl;
+            std::cout<<"Is light equipped: "<<(castedItem->getEquippedStatus() ? "true" : "false")<<std::endl;
 
             // Calculate total cost and total weight
             std::cout<<"Total value: "<<castedItem->calculateTotalValue()<<" septims"<<std::endl;
