@@ -1,5 +1,6 @@
 #include <iostream> // Used to print data to stdout
 #include <unordered_map> // Using a hash table data structure as the inventory to store each type of items (armor, weapons etc.) and to enable O(1) operations
+#include <vector>
 
 /* Following headers used for user input */
 #include <fstream>
@@ -438,7 +439,7 @@ void searchInventoryMenu()
     }
 }
 
-void viewInventory()
+void viewInventory(std::vector<Item*> inventory)
 {
     std::cout<<"Total inventory items: "<<inventory.size()<<"\n"<<std::endl;
     
@@ -446,7 +447,7 @@ void viewInventory()
     for(auto item = inventory.begin(); item != inventory.end(); item++)
     {
         /* COPIED FROM searchInventory FUNCTION - KEEP IT UPDATED */
-        if(auto castedItem = dynamic_cast<Armor*>(item->second)) // Armor
+        if(auto castedItem = dynamic_cast<Armor*>(*item)) // Armor
         {
             std::cout<<"Name: "<<castedItem->getName()<<std::endl;
 
@@ -460,7 +461,7 @@ void viewInventory()
 
             std::cout<<"\n";
         }
-        else if(auto castedItem = dynamic_cast<Weapon*>(item->second)) // Weapon
+        else if(auto castedItem = dynamic_cast<Weapon*>(*item)) // Weapon
         {
             std::cout<<"Name: "<<castedItem->getName()<<std::endl;
 
@@ -474,7 +475,7 @@ void viewInventory()
 
             std::cout<<"\n";
         }
-        else if(auto castedItem = dynamic_cast<ThievesTool*>(item->second)) // Weapon
+        else if(auto castedItem = dynamic_cast<ThievesTool*>(*item)) // Weapon
         {
             std::cout<<"Name: "<<castedItem->getName()<<std::endl;
 
@@ -488,7 +489,7 @@ void viewInventory()
 
             std::cout<<"\n";
         }
-        else if(auto castedItem = dynamic_cast<Clothing*>(item->second)) // Weapon
+        else if(auto castedItem = dynamic_cast<Clothing*>(*item)) // Weapon
         {
             std::cout<<"Name: "<<castedItem->getName()<<std::endl;
 
@@ -501,7 +502,7 @@ void viewInventory()
 
             std::cout<<"\n";
         }
-        else if(auto castedItem = dynamic_cast<Apparatus*>(item->second)) // Apparatus items (Alembic, Calcinator, Mortar and Pestle, Retort)
+        else if(auto castedItem = dynamic_cast<Apparatus*>(*item)) // Apparatus items (Alembic, Calcinator, Mortar and Pestle, Retort)
         {
             std::cout<<"Name: "<<castedItem->getName()<<std::endl;
 
@@ -513,7 +514,7 @@ void viewInventory()
 
             std::cout<<"\n";
         }
-        else if(auto castedItem = dynamic_cast<Light*>(item->second)) // Apparatus items (Alembic, Calcinator, Mortar and Pestle, Retort)
+        else if(auto castedItem = dynamic_cast<Light*>(*item)) // Apparatus items (Alembic, Calcinator, Mortar and Pestle, Retort)
         {
             std::cout<<"Name: "<<castedItem->getName()<<std::endl;
 
@@ -526,7 +527,7 @@ void viewInventory()
 
             std::cout<<"\n";
         }
-        else if(auto castedItem = dynamic_cast<Miscellaneous*>(item->second)) // Misc items (Coin, Soul Gem, Key, Other)
+        else if(auto castedItem = dynamic_cast<Miscellaneous*>(*item)) // Misc items (Coin, Soul Gem, Key, Other)
         {
             std::cout<<"Name: "<<castedItem->getName()<<std::endl;
 
@@ -547,6 +548,73 @@ void viewInventory()
     std::cout<<"Reached end of inventory. Returning back to main menu.\n\n";
 }
 
+void viewInventoryMenu()
+{
+    bool validInput = true;
+
+    std::vector<Item*> viewList;
+
+    while(validInput)
+    {
+        std::cout<<"What kind of items do you want to view: (Enter an integer between 1-4 then press ENTER key)\n"<<std::endl;
+        std::cout<<"(1) View all items\n";
+        std::cout<<"(2) View all equippable items\n";
+        std::cout<<"(3) View all apparatus items\n";
+        std::cout<<"(4) View all misc. items\n";
+        std::cout<<"(5) Return back to main menu\n";
+
+        std::string usrOption;
+
+        std::cin >> usrOption;
+
+        std::cout<<"\n";
+
+        if(usrOption == "1") // View all items in inventory
+        {
+            for(auto item : inventory)
+                viewList.push_back(item.second);
+        }
+        else if(usrOption == "2") // View all equippable items
+        {
+            for(auto item : inventory)
+            {
+                if(auto castedItem = dynamic_cast<Equippable*>(item.second))
+                    viewList.push_back(item.second);
+            }
+        }
+        else if(usrOption == "3") // View all apparatus items
+        {
+            for(auto item : inventory)
+            {
+                if(auto castedItem = dynamic_cast<Apparatus*>(item.second))
+                    viewList.push_back(item.second);
+            }
+        }
+        else if(usrOption == "4") // View all misc. items
+        {
+            for(auto item : inventory)
+            {
+                if(auto castedItem = dynamic_cast<Miscellaneous*>(item.second))
+                    viewList.push_back(item.second);
+            }
+        }
+        else if(usrOption != "5") // Invalid inputs
+        {
+            std::cout<<"Invalid input. Please try again.\n\n";
+            continue;
+        }
+
+        validInput = false;
+    }
+
+    if(!viewList.empty())
+        viewInventory(viewList);
+    else
+        std::cout<<"Returning back to main menu.\n\n";
+
+    viewList.clear();
+}
+
 void mainMenu()
 {
     std::cout<<"Welcome to the Morrowind Inventory Manager\n"<<std::endl;
@@ -555,7 +623,7 @@ void mainMenu()
 
     while(validInput)
     {
-        int usrOption;
+        std::string usrOption;
 
         std::cout<<"Select one of the following features: (Enter an integer between 1-4 then press ENTER key)\n"<<std::endl;
         std::cout<<"(1) View inventory\n";
@@ -567,14 +635,22 @@ void mainMenu()
 
         std::cout<<"\n";
 
-        switch(usrOption)
+        if(usrOption == "1")
+            viewInventoryMenu();
+        else if(usrOption == "2")
+            searchInventoryMenu();
+        else if(usrOption == "3")
         {
-            case 1: viewInventory(); break;
-            case 2: searchInventoryMenu(); break;
-            case 3: parseInventory(); std::cout<<"Inventory refreshed. Returning back to main menu.\n\n"; break;
-            case 4: std::cout<<"Exiting program ... \n"; validInput = false; break;
-            default: std::cout<<"Invalid input. Please try again (Select an integer between 1-4).\n\n";
+            parseInventory();
+            std::cout<<"Inventory refreshed. Returning back to main menu.\n\n";
         }
+        else if(usrOption == "4")
+        {
+            std::cout<<"Exiting program ... \n";
+            validInput = false;
+        }
+        else // Invalid inputs
+            std::cout<<"Invalid input. Please try again.\n\n";  
     }
 }
 
