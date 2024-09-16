@@ -1,6 +1,7 @@
 #include <iostream> // Used to print data to stdout
 #include <unordered_map> // Using a hash table data structure as the inventory to store each type of items (armor, weapons etc.) and to enable O(1) operations
 #include <vector>
+#include <algorithm>
 
 /* Following headers used for user input */
 #include <fstream>
@@ -599,6 +600,86 @@ void viewInventoryMenu()
             }
         }
         else if(usrOption != "5") // Invalid inputs
+        {
+            std::cout<<"Invalid input. Please try again.\n\n";
+            continue;
+        }
+
+        validInput = false;
+    }
+
+    validInput = true;
+
+    while(validInput)
+    {
+        std::cout<<"Select a sorting criteria: (Enter an integer between 1-9 then press ENTER key)\n"<<std::endl;
+        std::cout<<"(1) Sort by name (increasing)\n";
+        std::cout<<"(2) Sort by name (decreasing)\n";
+        std::cout<<"(3) Sort by cost (increasing)\n";
+        std::cout<<"(4) Sort by cost (decreasing)\n";
+        std::cout<<"(5) Sort by quantity (increasing)\n";
+        std::cout<<"(6) Sort by quantity (decreasing)\n";
+        std::cout<<"(7) Sort by weight (increasing)\n";
+        std::cout<<"(8) Sort by weight (decreasing)\n";
+        std::cout<<"(9) Return back to main menu\n";
+
+        std::string usrOption;
+
+        std::cin >> usrOption;
+
+        std::cout<<"\n";
+
+        if(usrOption == "1") // Sort items alphabetically in increasing order
+        {
+            std::sort(viewList.begin(), viewList.end(), [](Item* a, Item* b) {
+                return a->getName() < b->getName(); 
+            });
+        }
+        else if(usrOption == "2") // Sort items alphabetically in decreasing order
+        {
+            std::sort(viewList.begin(), viewList.end(), [](Item* a, Item* b) {
+                return a->getName() > b->getName();  
+            });
+        }
+        else if(usrOption == "3") // Sort items by total value in increasing order
+        {
+            std::sort(viewList.begin(), viewList.end(), [](Item* a, Item* b) {
+                return a->calculateTotalValue() < b->calculateTotalValue(); 
+            });
+        }
+        else if(usrOption == "4") // Sort items by total value in decreasing order
+        {
+            std::sort(viewList.begin(), viewList.end(), [](Item* a, Item* b) {
+                return a->calculateTotalValue() > b->calculateTotalValue(); 
+            });
+        }
+        else if(usrOption == "5") // Sort items by quantity in increasing order
+        {
+            std::sort(viewList.begin(), viewList.end(), [](Item* a, Item* b) {
+                return a->getQuantity() < b->getQuantity(); 
+            });
+        }
+        else if(usrOption == "6") // Sort items by quantity in decreasing order
+        {
+            std::sort(viewList.begin(), viewList.end(), [](Item* a, Item* b) {
+                return a->getQuantity() > b->getQuantity();  
+            });
+        }
+        else if(usrOption == "7") // Sort items by total weight in increasing order
+        {
+            std::sort(viewList.begin(), viewList.end(), [](Item* a, Item* b) {
+                return a->calculateTotalWeight() < b->calculateTotalWeight(); 
+            });
+        }
+        else if(usrOption == "8") // Sort items by total weight in decreasing order
+        {
+            std::sort(viewList.begin(), viewList.end(), [](Item* a, Item* b) {
+                return a->calculateTotalWeight() > b->calculateTotalWeight(); 
+            });
+        }
+        else if(usrOption == "9")
+            viewList.clear();
+        else if(usrOption != "9") // Invalid inputs
         {
             std::cout<<"Invalid input. Please try again.\n\n";
             continue;
