@@ -599,6 +599,8 @@ void viewInventoryMenu()
                     viewList.push_back(item.second);
             }
         }
+        else if(usrOption == "5") // Return to main menu
+            return ;
         else if(usrOption != "5") // Invalid inputs
         {
             std::cout<<"Invalid input. Please try again.\n\n";
@@ -677,7 +679,7 @@ void viewInventoryMenu()
                 return a->calculateTotalWeight() > b->calculateTotalWeight(); 
             });
         }
-        else if(usrOption == "9")
+        else if(usrOption == "9") // Clear viewing list before returning back to menu
             viewList.clear();
         else if(usrOption != "9") // Invalid inputs
         {
