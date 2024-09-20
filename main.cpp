@@ -17,10 +17,23 @@
 #include "./classes/apparatus.hpp" // Class for Apparatus items
 #include "./classes/light.hpp" // Class for Light items
 
+void clearScreen()
+{
+#if defined(_WIN32) || defined(_WIN64) // For Windows
+    std::system("cls");
+#elif defined(__linux__) || defined(__unix__) || defined(__APPLE__) // For Linux, Unix, macOS
+    std::system("clear");
+#else
+    // Do nothing, keep terminal uncleared
+#endif
+}
+
 std::unordered_map<std::string,Item*> inventory; // Hash table data structure to store all inventory items
 
 void parseInventory()
 {
+    clearScreen();
+
     inventory.clear(); // Clear any items stored inside the hash map before parsing
 
     /* Open text file and check if it exists */
@@ -411,6 +424,8 @@ void searchInventoryMenu()
 
     while(validInput)
     {
+        clearScreen();
+
         std::string itemName;
 
         std::cout<<"Enter the name of a item you want to search for:\n"<<std::endl;
@@ -546,14 +561,28 @@ void viewInventory(std::vector<Item*> inventory)
         // ... Repeat for other Item subclasses
     }
 
-    std::cout<<"Reached end of inventory. Returning back to main menu.\n\n";
+    std::cout<<"Reached end of inventory. Enter any character key to return back to the main menu.\n\n";
+
+    bool validInput = true;
+
+    while(validInput)
+    {   
+        std::string usrOption;
+        std::cin >> usrOption; // Accept any user input to return back to the main menu
+        validInput = false;
+        std::cout<<"\n";
+    }
 }
 
 void viewInventoryMenu()
 {
+    clearScreen();
+
     bool validInput = true;
 
     std::vector<Item*> viewList;
+
+    std::string itemSelection; // Specifies the previously-made selection before selecting the sorting criteria
 
     while(validInput)
     {
@@ -568,38 +597,46 @@ void viewInventoryMenu()
 
         std::cin >> usrOption;
 
-        std::cout<<"\n";
+        clearScreen();
 
-        if(usrOption == "1") // View all items in inventory
+        if(usrOption == "1")
         {
+            itemSelection = "all items";
+
             for(auto item : inventory)
                 viewList.push_back(item.second);
         }
-        else if(usrOption == "2") // View all equippable items
+        else if(usrOption == "2")
         {
+            itemSelection = "all equippable items";
+
             for(auto item : inventory)
             {
                 if(auto castedItem = dynamic_cast<Equippable*>(item.second))
                     viewList.push_back(item.second);
             }
         }
-        else if(usrOption == "3") // View all apparatus items
+        else if(usrOption == "3")
         {
+            itemSelection = "all apparatus items";
+
             for(auto item : inventory)
             {
                 if(auto castedItem = dynamic_cast<Apparatus*>(item.second))
                     viewList.push_back(item.second);
             }
         }
-        else if(usrOption == "4") // View all misc. items
+        else if(usrOption == "4")
         {
+           itemSelection = "all miscellaneous items";
+
             for(auto item : inventory)
             {
                 if(auto castedItem = dynamic_cast<Miscellaneous*>(item.second))
                     viewList.push_back(item.second);
             }
         }
-        else if(usrOption == "5") // Return to main menu
+        else if(usrOption == "5")
             return ;
         else if(usrOption != "5") // Invalid inputs
         {
@@ -614,6 +651,8 @@ void viewInventoryMenu()
 
     while(validInput)
     {
+        std::cout<<"Viewing "<<itemSelection<<".\n"<<std::endl;
+
         std::cout<<"Select a sorting criteria: (Enter an integer between 1-9 then press ENTER key)\n"<<std::endl;
         std::cout<<"(1) Sort by name (increasing)\n";
         std::cout<<"(2) Sort by name (decreasing)\n";
@@ -629,52 +668,68 @@ void viewInventoryMenu()
 
         std::cin >> usrOption;
 
-        std::cout<<"\n";
+        clearScreen();
 
-        if(usrOption == "1") // Sort items alphabetically in increasing order
+        if(usrOption == "1")
         {
+            std::cout<<"Sorting "<<itemSelection<<" alphabetically in increasing order.\n"<<std::endl;
+
             std::sort(viewList.begin(), viewList.end(), [](Item* a, Item* b) {
                 return a->getName() < b->getName(); 
             });
         }
-        else if(usrOption == "2") // Sort items alphabetically in decreasing order
+        else if(usrOption == "2")
         {
+            std::cout<<"Sorting "<<itemSelection<<" alphabetically in decreasing order.\n"<<std::endl;
+
             std::sort(viewList.begin(), viewList.end(), [](Item* a, Item* b) {
                 return a->getName() > b->getName();  
             });
         }
-        else if(usrOption == "3") // Sort items by total value in increasing order
+        else if(usrOption == "3")
         {
+            std::cout<<"Sorting "<<itemSelection<<" by total value in increasing order.\n"<<std::endl;
+
             std::sort(viewList.begin(), viewList.end(), [](Item* a, Item* b) {
                 return a->calculateTotalValue() < b->calculateTotalValue(); 
             });
         }
-        else if(usrOption == "4") // Sort items by total value in decreasing order
+        else if(usrOption == "4")
         {
+            std::cout<<"Sorting "<<itemSelection<<" by total value in decreasing order.\n"<<std::endl;
+
             std::sort(viewList.begin(), viewList.end(), [](Item* a, Item* b) {
                 return a->calculateTotalValue() > b->calculateTotalValue(); 
             });
         }
-        else if(usrOption == "5") // Sort items by quantity in increasing order
+        else if(usrOption == "5")
         {
+            std::cout<<"Sorting "<<itemSelection<<" by quantity in increasing order.\n"<<std::endl;
+
             std::sort(viewList.begin(), viewList.end(), [](Item* a, Item* b) {
                 return a->getQuantity() < b->getQuantity(); 
             });
         }
-        else if(usrOption == "6") // Sort items by quantity in decreasing order
+        else if(usrOption == "6")
         {
+            std::cout<<"Sorting "<<itemSelection<<" by quantity in decreasing order.\n"<<std::endl;
+
             std::sort(viewList.begin(), viewList.end(), [](Item* a, Item* b) {
                 return a->getQuantity() > b->getQuantity();  
             });
         }
-        else if(usrOption == "7") // Sort items by total weight in increasing order
+        else if(usrOption == "7")
         {
+            std::cout<<"Sorting "<<itemSelection<<" by total weight in increasing order.\n"<<std::endl;
+
             std::sort(viewList.begin(), viewList.end(), [](Item* a, Item* b) {
                 return a->calculateTotalWeight() < b->calculateTotalWeight(); 
             });
         }
-        else if(usrOption == "8") // Sort items by total weight in decreasing order
+        else if(usrOption == "8")
         {
+            std::cout<<"Sorting "<<itemSelection<<" by total weight in decreasing order.\n"<<std::endl;
+
             std::sort(viewList.begin(), viewList.end(), [](Item* a, Item* b) {
                 return a->calculateTotalWeight() > b->calculateTotalWeight(); 
             });
@@ -719,13 +774,19 @@ void mainMenu()
         std::cout<<"\n";
 
         if(usrOption == "1")
+        {
             viewInventoryMenu();
+            clearScreen();
+        }
         else if(usrOption == "2")
+        {
             searchInventoryMenu();
+            clearScreen();
+        }
         else if(usrOption == "3")
         {
             parseInventory();
-            std::cout<<"Inventory refreshed. Returning back to main menu.\n\n";
+            std::cout<<"Inventory refreshed.\n\n";
         }
         else if(usrOption == "4")
         {
@@ -733,7 +794,10 @@ void mainMenu()
             validInput = false;
         }
         else // Invalid inputs
-            std::cout<<"Invalid input. Please try again.\n\n";  
+        {
+            clearScreen();
+            std::cout<<"Invalid input. Please try again.\n\n"; 
+        } 
     }
 }
 
